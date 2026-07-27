@@ -1,20 +1,28 @@
 """
 add_lyrics_fields.py
-======================
-Script de UNA SOLA CORRIDA, standalone (igual que import_vanilla_songs.py):
-agrega "lyrics": [] y "lyrics_en": [] a cada canción de tu
-vanilla_songs.json que todavía no los tenga. NO TOCA nada más -- todo lo
-que ya llenaste a mano (bpm, song_name_reading, performers, etc.) se
-queda exactamente igual. Si una canción YA tiene "lyrics"/"lyrics_en",
-se deja tal cual (no se sobrescribe).
+====================
 
-Uso:
-    1. Pon INPUT_FILE apuntando a tu archivo real (por defecto asume que
-       está en la misma carpeta que este script).
-    2. python add_lyrics_fields.py
-    3. Revisa el resultado en OUTPUT_FILE antes de reemplazar tu archivo
-       real, por seguridad (el script no sobreescribe el original solo).
+One-time standalone script (similar to import_vanilla_songs.py).
+
+Adds the "lyrics": [] and "lyrics_en": [] fields to every song in
+vanilla_songs.json that does not already contain them.
+
+This script DOES NOT modify any other data. Everything you have already
+edited manually (such as bpm, song_name_reading, performers, etc.)
+remains exactly as it is.
+
+If a song already contains "lyrics" and/or "lyrics_en", those fields are
+left untouched and will not be overwritten.
+
+Usage:
+    1. Set INPUT_FILE to your actual JSON file (by default it assumes the
+       file is located in the same directory as this script).
+    2. Run:
+           python add_lyrics_fields.py
+    3. Review the generated OUTPUT_FILE before replacing your original
+       file. For safety, this script never overwrites the original file.
 """
+
 from __future__ import annotations
 
 import json
@@ -23,12 +31,17 @@ import shutil
 
 INPUT_FILE = "vanilla_songs_output.json"
 OUTPUT_FILE = "vanilla_songs_output_with_lyrics.json"
-MAKE_BACKUP = True  # además del archivo de salida separado, hace un .backup del original
+
+# In addition to creating a separate output file, also create a backup
+# of the original file.
+MAKE_BACKUP = True
 
 
 def main():
+    """Add empty lyrics fields to songs that do not already have them."""
+
     if not os.path.exists(INPUT_FILE):
-        print(f"No se encontró {INPUT_FILE}. Ajusta INPUT_FILE arriba y vuelve a correr.")
+        print(f"{INPUT_FILE} was not found. Update INPUT_FILE at the top of this script and try again.")
         return
 
     with open(INPUT_FILE, "r", encoding="utf-8") as f:
@@ -40,12 +53,15 @@ def main():
 
     for song in songs:
         changed = False
+
         if "lyrics" not in song:
             song["lyrics"] = []
             changed = True
+
         if "lyrics_en" not in song:
             song["lyrics_en"] = []
             changed = True
+
         if changed:
             added += 1
         else:
@@ -54,15 +70,15 @@ def main():
     if MAKE_BACKUP:
         backup_path = INPUT_FILE + ".backup"
         shutil.copy2(INPUT_FILE, backup_path)
-        print(f"Backup del original guardado en: {backup_path}")
+        print(f"Original file backup saved to: {backup_path}")
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
-    print(f"\n{added} canciones recibieron lyrics/lyrics_en vacíos (listos para llenar).")
-    print(f"{already_had} canciones ya los tenían, sin tocar.")
-    print(f"Resultado en: {OUTPUT_FILE}")
-    print("Revísalo y, cuando quieras, reemplaza tu vanilla_songs.json real con este contenido.")
+    print(f"\n{added} song(s) received empty lyrics/lyrics_en fields, ready to be filled.")
+    print(f"{already_had} song(s) already contained those fields and were left unchanged.")
+    print(f"Output written to: {OUTPUT_FILE}")
+    print("Review the generated file, then replace your original vanilla_songs.json whenever you're ready.")
 
 
 if __name__ == "__main__":
