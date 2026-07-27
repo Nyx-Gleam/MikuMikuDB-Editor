@@ -83,7 +83,7 @@ MikuMikuDB エディターは、Project Diva カスタム楽曲パック向け�
  
 * **OS:** Windows 10 または 11（64bit 推奨）
 * **単体実行ファイル版:** Python やライブラリのインストールは不要。実行ファイルを起動するだけ。
-* **ソースコードから実行する場合:** Python 3.12 以上に加え、`PySide6`、`cryptography`、`requests` が必要。任意: `pykakasi`（ひらがな自動生成）、`toml`（`config.toml` の読み込み）、`numpy` + `madmom`（BPM 自動検出）。
+* **ソースコードから実行する場合:** Python 3.12 以上に加え、`PySide6`、`cryptography`、`requests` が必要。任意: `pykakasi`（ひらがな自動生成）、`toml`（`config.toml` の読み込み）— どちらも `pip` でインストール可能。BPM 自動検出にはさらに `numpy`（`pip` でインストール可能）と **`madmom`** が必要ですが、**`madmom` は `pip install madmom` ではインストールできません** — [GitHub リポジトリ](https://github.com/CPJKU/madmom)から直接取得し、そちらの手順に従ってインストールしてください。
 ---
  
 ## インストール方法
@@ -126,7 +126,7 @@ MikuMikuDB エディターは、Project Diva カスタム楽曲パック向け�
    py main.py
 ```
  
-> **注記:** `pykakasi`、`toml`、`numpy`+`madmom` は任意です（[requirements.txt](./requirements.txt) 参照）— これらが無くてもアプリは動作し、ひらがな自動生成と BPM 自動検出のみ無効になります。
+> **注記:** `pykakasi`、`toml`、`numpy` は任意で、`pip install -r requirements.txt` でまとめてインストールできます（[requirements.txt](./requirements.txt) 参照）— これらが無くてもアプリは動作し、ひらがな自動生成と BPM 自動検出のみ無効になります。`madmom`（BPM 自動検出に `numpy` と併せて必要）は PyPI からインストールできる状態ではないため、`requirements.txt` には意図的に含まれていません — その機能を使いたい場合は [github.com/CPJKU/madmom](https://github.com/CPJKU/madmom) から手動でインストールしてください。
  
 ---
  
