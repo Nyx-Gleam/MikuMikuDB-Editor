@@ -1,0 +1,77 @@
+name: 🐛 Bug Report
+description: Something in the editor crashed, misbehaved, or produced a wrong result.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this! You can write this issue in **English, Spanish, or Japanese** — whichever is easiest for you.
+        コメントは英語・スペイン語・日本語のどれでも構いません。
+        Puedes escribir este issue en inglés, español o japonés — el que te resulte más cómodo.
+
+  - type: dropdown
+    id: build-type
+    attributes:
+      label: How are you running the editor?
+      options:
+        - Downloaded .exe (from GitHub Releases)
+        - Downloaded .exe (from GameBanana)
+        - Running from source (py main.py)
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Check the app's title bar or About screen. If running from source, include the branch/commit if you know it.
+      placeholder: "e.g. 2.0 BETA, v1.1, or commit hash"
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating System
+      placeholder: "e.g. Windows 11 64-bit"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug. What did you expect to happen instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps so the bug can be reproduced reliably.
+      placeholder: |
+        1. Open the Song Editor
+        2. Go to the Audio Variants tab
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Crash log / error message
+      description: |
+        If the app crashed or showed an error dialog, please paste the contents of `editor_crash.log` here (found next to the executable, or in your project folder if running from source).
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: files
+    attributes:
+      label: Relevant files (optional)
+      description: If it's related to a specific song, pack, or `.pdpack`/`mod_pv_db.txt` file, attach it here or describe the relevant fields. Do not attach anything you don't want to share publicly.
+    validations:
+      required: false
