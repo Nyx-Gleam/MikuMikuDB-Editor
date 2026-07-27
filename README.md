@@ -83,7 +83,7 @@ This version is a full rewrite of the application, not just a feature update:
  
 * **Windows 10 or 11** (64-bit recommended).
 * **Standalone build:** no installation of Python or libraries required — just run the executable.
-* **Running from source:** Python 3.12+, plus `PySide6`, `cryptography`, and `requests`. Optional: `pykakasi` (automatic Hiragana generation), `toml` (reading `config.toml`), and `numpy` + `madmom` (automatic BPM detection).
+* **Running from source:** Python 3.12+, plus `PySide6`, `cryptography`, and `requests`. Optional: `pykakasi` (automatic Hiragana generation) and `toml` (reading `config.toml`), both installable via `pip`. Automatic BPM detection additionally needs `numpy` (via `pip`) and **`madmom`, which is *not* installed via `pip install madmom`** — grab it directly from its [GitHub repository](https://github.com/CPJKU/madmom) and follow its own installation instructions.
 ---
  
 ## Installation
@@ -125,7 +125,7 @@ This version is a full rewrite of the application, not just a feature update:
    py main.py
 ```
  
-> **Note:** `pykakasi`, `toml`, and `numpy`+`madmom` are optional (see [requirements.txt](./requirements.txt)) — the app runs without them, just with automatic Hiragana generation and BPM auto-detect disabled.
+> **Note:** `pykakasi`, `toml`, and `numpy` are optional and covered by `pip install -r requirements.txt` (see [requirements.txt](./requirements.txt)) — the app runs without them, just with automatic Hiragana generation and BPM auto-detect disabled. `madmom` (needed for BPM auto-detect, alongside `numpy`) is **not** on PyPI in an installable state and is intentionally left out of `requirements.txt` — install it manually from [github.com/CPJKU/madmom](https://github.com/CPJKU/madmom) if you want that feature.
  
 ---
  
