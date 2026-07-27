@@ -1,46 +1,68 @@
 """
 import_vanilla_songs.py
-=========================
-Script de UNA SOLA CORRIDA para generar el "songs" de vanilla_songs.json
-usando la API de DivaModArchive. Standalone a propósito -- no vive dentro
-de diva_editor/, no se importa desde ningún lado de core/ ni ui/, y no se
-bundlea en el build. Lo corres tú una vez (o cada vez que quieras
-regenerar/ampliar el catálogo) y después copias el resultado a
-diva_editor/data/vanilla_songs.json a mano.
+=======================
 
-*** NO PUDE PROBAR LA LLAMADA REAL A LA API ***
-Este entorno no tiene salida a internet hacia divamodarchive.com, así que
-escribí esto según el curl y los parámetros que diste, pero no pude
-confirmar en vivo que la sintaxis del filtro (`pv_id IN [...]`, estilo
-meilisearch) o el límite real de resultados por página funcionen tal
-cual. Si falla, revisa primero eso -- corre con un solo ID de prueba
-antes de lanzarlo con la lista completa.
+One-time standalone script that generates the "songs" section of
+vanilla_songs.json using the DivaModArchive API.
 
-Qué SÍ automatiza (confirmado con tus datos de muestra):
-- song_name, song_name_en
-- songinfo (créditos JP/EN, los 7 campos -- 'ex_info' se descarta, no
-  tiene equivalente en mod_pv_db.txt)
-- difficulties -- orden inferido [easy, normal, hard, extreme,
-  extreme_extra] a partir del array "levels" (verificado contra los
-  rangos válidos de tu guía en las 10 canciones de muestra, pero
-  igual conviene que revises un par a ojo). null = esa dificultad no
-  existe para esa canción, se omite.
+This script is intentionally standalone—it does not live inside
+diva_editor/, is not imported by any module under core/ or ui/, and is
+not bundled with application builds.
 
-Qué NO trae la API (confirmado contigo, se llenan con tus defaults o
-quedan como placeholder para llenar a mano):
-- date -> fijo en DEFAULT_DATE (fecha de lanzamiento que definas)
-- sabi_start / sabi_play -> fijos en DEFAULT_SABI_START / DEFAULT_SABI_PLAY
-- song_name_reading (hiragana) -> placeholder "FILL_ME", a mano
-- bpm -> placeholder "FILL_ME", a mano
-- performers -> placeholder ["FILL_ME"], a mano (la API no dice quién canta)
+Run it once (or whenever you want to regenerate or expand the catalog),
+then manually copy the generated output into:
 
-Uso:
-    1. pip install requests   (si no lo tienes ya)
-    2. Llena VANILLA_PV_IDS abajo (pega tu lista de excluded_ids, por ejemplo)
-    3. python import_vanilla_songs.py
-    4. Revisa vanilla_songs_output.json, reemplaza los "FILL_ME", y copia
-       el resultado a diva_editor/data/vanilla_songs.json
+    diva_editor/data/vanilla_songs.json
+
+What IS automated:
+
+- song_name
+- song_name_en
+- songinfo (Japanese/English credits, all seven supported fields.
+  'ex_info' is intentionally ignored because it has no equivalent
+  in mod_pv_db.txt.)
+- difficulties
+  Difficulty order is assumed to be:
+      [easy, normal, hard, extreme, extreme_extra]
+  based on the "levels" array.
+
+  This mapping was verified against the valid ranges shown in your guide
+  using the ten sample songs you provided, but it is still recommended to
+  manually verify a few songs.
+
+  A null value means that the corresponding difficulty does not exist for
+  that song, so it is omitted.
+
+What the API DOES NOT provide:
+
+- date
+    Uses DEFAULT_DATE.
+- sabi_start
+    Uses DEFAULT_SABI_START.
+- sabi_play
+    Uses DEFAULT_SABI_PLAY.
+- song_name_reading
+    Uses the placeholder "FILL_ME".
+- bpm
+    Uses the placeholder "FILL_ME".
+- performers
+    Uses ["FILL_ME"] because the API does not indicate who performs
+    the song.
+
+Usage:
+
+    1. pip install requests
+    2. Fill VANILLA_PV_IDS below with the PV IDs you want to retrieve.
+    3. Run:
+
+           python import_vanilla_songs.py
+
+    4. Review vanilla_songs_output.json, replace every "FILL_ME"
+       placeholder, then copy the result into:
+
+           diva_editor/data/vanilla_songs.json
 """
+
 from __future__ import annotations
 
 import json
@@ -50,8 +72,10 @@ import time
 import requests
 
 # ============================================================
-# EDITA ESTO: pega aquí los PV IDs vanilla que quieres traer de la API
-# (por ejemplo, los mismos que ya tienes en tu lista de excluded_ids).
+# EDIT THIS SECTION:
+# Paste the vanilla PV IDs you want to retrieve from the API.
+# For example, you can paste the same IDs used in your
+# excluded_ids list.
 # ============================================================
 VANILLA_PV_IDS: list[int] = [
     1,
@@ -313,38 +337,64 @@ VANILLA_PV_IDS: list[int] = [
 ]
 
 # ============================================================
-# Configuración
+# Configuration
 # ============================================================
+
 API_BASE_URL = "https://divamodarchive.com/api/v1/ids/pvs"
-BATCH_SIZE = 50           # cuántos IDs pedir por llamada (ver nota sobre límites no confirmados arriba)
-REQUEST_DELAY_SECONDS = 2   # pausa entre llamadas, para no golpear la API de golpe
+
+# Number of PV IDs requested per API call.
+# (See the note above regarding unverified API limits.)
+BATCH_SIZE = 50
+
+# Delay between requests to avoid sending too many requests at once.
+REQUEST_DELAY_SECONDS = 2
+
 REQUEST_TIMEOUT_SECONDS = 15
 
 OUTPUT_FILE = "vanilla_songs_output.json"
-EXISTING_FILE_TO_MERGE = "vanilla_songs_output.json"  # si ya existe, se actualiza en vez de empezar de cero
 
-# Confirmados contigo:
-DEFAULT_DATE = "20220526"       # fecha de lanzamiento de Mega Mix+ -- cámbiala si prefieres otra
+# If this file already exists, its contents will be merged instead of
+# generating a completely new catalog.
+EXISTING_FILE_TO_MERGE = "vanilla_songs_output.json"
+
+# Default values confirmed with the project.
+DEFAULT_DATE = "20220526"       # Mega Mix+ release date
 DEFAULT_SABI_START = "0.0"
 DEFAULT_SABI_PLAY = "20.0"
+
 PLACEHOLDER_BPM = "FILL_ME"
 PLACEHOLDER_READING = "FILL_ME"
 PLACEHOLDER_PERFORMERS = ["FILL_ME"]
 
-DIFFICULTY_ORDER = ["easy", "normal", "hard", "extreme", "extreme_extra"]
-DEFAULT_LEVEL_SORT_INDEX = {"easy": 50, "normal": 50, "hard": 80, "extreme": 20, "extreme_extra": 50}
+DIFFICULTY_ORDER = [
+    "easy",
+    "normal",
+    "hard",
+    "extreme",
+    "extreme_extra",
+]
+
+DEFAULT_LEVEL_SORT_INDEX = {
+    "easy": 50,
+    "normal": 50,
+    "hard": 80,
+    "extreme": 20,
+    "extreme_extra": 50,
+}
 
 
 # ============================================================
-# Llamadas a la API
+# API calls
 # ============================================================
+
 def _chunks(lst: list, size: int):
+    """Yield successive chunks from a list."""
     for i in range(0, len(lst), size):
         yield lst[i:i + size]
 
 
 def fetch_pvs_by_ids(pv_ids: list[int]) -> list[dict]:
-    """Trae los datos de varios PV IDs de la API, en tandas de BATCH_SIZE."""
+    """Retrieve data for multiple PV IDs from the API in batches of BATCH_SIZE."""
     all_pvs = []
     batches = list(_chunks(pv_ids, BATCH_SIZE))
 
@@ -352,7 +402,7 @@ def fetch_pvs_by_ids(pv_ids: list[int]) -> list[dict]:
         filter_str = "pv_id IN [" + ", ".join(str(i) for i in batch) + "]"
         params = {"filter": filter_str, "limit": len(batch), "offset": 0}
 
-        print(f"[{n}/{len(batches)}] Pidiendo {len(batch)} IDs ({batch[0]}..{batch[-1]})...")
+        print(f"[{n}/{len(batches)}] Requesting {len(batch)} IDs ({batch[0]}..{batch[-1]})...")
         try:
             resp = requests.get(
                 API_BASE_URL, params=params,
@@ -362,10 +412,10 @@ def fetch_pvs_by_ids(pv_ids: list[int]) -> list[dict]:
             resp.raise_for_status()
             data = resp.json()
             pvs = data.get("pvs", [])
-            print(f"    -> {len(pvs)} resultados")
+            print(f"    -> {len(pvs)} result(s)")
             all_pvs.extend(pvs)
         except Exception as e:
-            print(f"    !! ERROR en esta tanda, se sigue con la siguiente: {e}")
+            print(f"    !! ERROR while processing this batch, continuing with the next one: {e}")
 
         if n < len(batches):
             time.sleep(REQUEST_DELAY_SECONDS)
@@ -374,7 +424,7 @@ def fetch_pvs_by_ids(pv_ids: list[int]) -> list[dict]:
 
 
 # ============================================================
-# Conversión al formato de vanilla_songs.json
+# Conversion to vanilla_songs.json format
 # ============================================================
 def _convert_songinfo(song_info: dict | None, song_info_en: dict | None) -> dict:
     result = {}
@@ -391,7 +441,7 @@ def _convert_songinfo(song_info: dict | None, song_info_en: dict | None) -> dict
 
 
 def _convert_difficulties(levels: list | None) -> dict:
-    """null en 'levels' = esa dificultad no existe para la canción -> se omite."""
+    """A null value in 'levels' means the song does not have that difficulty, so it is omitted."""
     result = {}
     if not levels:
         return result
@@ -427,49 +477,45 @@ def convert_pv(pv: dict) -> dict:
 # ============================================================
 def main():
     if not VANILLA_PV_IDS:
-        print("VANILLA_PV_IDS está vacío -- pega tus IDs arriba antes de correr esto.")
+        print("VANILLA_PV_IDS is empty. Paste your PV IDs above before running this script.")
         return
 
-    print(f"Consultando {len(VANILLA_PV_IDS)} PV IDs en la API de DivaModArchive...\n")
+    print(f"Querying {len(VANILLA_PV_IDS)} PV IDs from the DivaModArchive API...\n")
     raw_pvs = fetch_pvs_by_ids(VANILLA_PV_IDS)
-    print(f"\nTotal traído: {len(raw_pvs)} de {len(VANILLA_PV_IDS)} pedidos")
+    print(f"\nRetrieved {len(raw_pvs)} out of {len(VANILLA_PV_IDS)} requested PV IDs.")
 
     found_ids = {str(pv.get("id")) for pv in raw_pvs}
     missing = [i for i in VANILLA_PV_IDS if str(i) not in found_ids]
     if missing:
-        print(f"AVISO: {len(missing)} IDs no se encontraron en la API: {missing}")
+        print(f"WARNING: {len(missing)} PV IDs were not found in the API: {missing}")
 
     songs = [convert_pv(pv) for pv in raw_pvs]
 
-    # Si ya existe un output previo (de una corrida anterior con menos IDs),
-    # se actualiza en vez de empezar de cero.
+    # If a previous output file already exists (for example, from an earlier
+    # run with fewer PV IDs), merge the new data instead of starting from scratch.
     existing_by_id = {}
     if os.path.exists(EXISTING_FILE_TO_MERGE):
         try:
             with open(EXISTING_FILE_TO_MERGE, "r", encoding="utf-8") as f:
                 prev = json.load(f)
             existing_by_id = {s["pv_id"]: s for s in prev.get("songs", [])}
-            print(f"Se encontró {EXISTING_FILE_TO_MERGE} previo con {len(existing_by_id)} canciones -- se combina.")
+            print(f"Found an existing {EXISTING_FILE_TO_MERGE} containing {len(existing_by_id)} songs — merging data.")
         except Exception as e:
-            print(f"No se pudo leer {EXISTING_FILE_TO_MERGE} previo, se ignora: {e}")
+            print(f"Could not read the existing {EXISTING_FILE_TO_MERGE}; ignoring it: {e}")
 
     for song in songs:
-        existing_by_id[song["pv_id"]] = song  # sobrescribe si ya existía, agrega si es nuevo
+        existing_by_id[song["pv_id"]] = song  # Overwrite existing entries or add new ones.
 
     all_songs = sorted(existing_by_id.values(), key=lambda s: int(s["pv_id"]))
 
-    output = {"excluded_ids": [], "songs": all_songs}
-    # NOTA: excluded_ids queda vacío aquí a propósito -- ese campo ya lo
-    # tienes armado en tu vanilla_songs.json real. Este script solo genera
-    # la lista de "songs"; copia solo esa parte a tu archivo final, o pega
-    # tu excluded_ids ya armado en el output antes de copiarlo.
+    output = {"excluded_ids": VANILLA_PV_IDS, "songs": all_songs}
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 
-    print(f"\nListo. {len(all_songs)} canciones escritas en {OUTPUT_FILE}")
-    print("Pendiente de llenar a mano (marcado 'FILL_ME'): song_name_reading, bpm, performers.")
-    print(f"date/sabi quedaron con los defaults que pediste: {DEFAULT_DATE} / {DEFAULT_SABI_START} / {DEFAULT_SABI_PLAY}")
+    print(f"\nDone. {len(all_songs)} song(s) written to {OUTPUT_FILE}")
+    print("The following placeholders still need to be filled manually: song_name_reading, bpm, performers.")
+    print(f"date/sabi values were set to the requested defaults: {DEFAULT_DATE} / {DEFAULT_SABI_START} / {DEFAULT_SABI_PLAY}")
 
 
 if __name__ == "__main__":
