@@ -1,6 +1,6 @@
 # MikuMikuDB Editor
 
-🌐 **Idioma:** [English](./README.md) | Español | [日本語](./README.ja.md)
+🌐 **Idioma:** [English](./README.md) | Español | [日本語](./README_JA.md)
 
 > Aplicación GUI para generar archivos `mod_pv_db.txt` para packs de canciones personalizados de Project Diva.
 >
