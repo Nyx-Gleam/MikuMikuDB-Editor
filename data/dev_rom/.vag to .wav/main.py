@@ -1,120 +1,105 @@
-# import os
-# import subprocess
-# import sys
-# import glob
-# 
-# def convert_vag_to_wav(input_folder):
-#     # Verifica que la carpeta exista
-#     if not os.path.isdir(input_folder):
-#         print("Error: La ruta no es una carpeta válida.")
-#         return
-#     
-#     # Crea la carpeta de salida: mismo nombre + "_wav"
-#     folder_name = os.path.basename(os.path.normpath(input_folder))
-#     parent_folder = os.path.dirname(os.path.normpath(input_folder))
-#     output_folder = os.path.join(parent_folder, f"{folder_name}_wav")
-#     
-#     # Crea la carpeta si no existe
-#     os.makedirs(output_folder, exist_ok=True)
-#     print(f"Carpeta de salida creada: {output_folder}")
-#     
-#     # Busca archivos .vag (mayúsculas y minúsculas)
-#     vag_files = glob.glob(os.path.join(input_folder, "*.vag")) + \
-#                 glob.glob(os.path.join(input_folder, "*.VAG"))
-#     
-#     if not vag_files:
-#         print("No se encontraron archivos .vag en la carpeta.")
-#         return
-#     
-#     print(f"Se encontraron {len(vag_files)} archivos .vag. Iniciando conversión...\n")
-#     
-#     for vag_file in vag_files:
-#         # Nombre del archivo sin extensión
-#         base_name = os.path.splitext(os.path.basename(vag_file))[0]
-#         wav_file = os.path.join(output_folder, f"{base_name}.wav")
-#         
-#         # Comando FFmpeg: conversión directa a WAV (sin parámetros extra, calidad original)
-#         command = ["ffmpeg", "-i", vag_file, wav_file]
-#         try:
-#             subprocess.run(command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-#             print(f"✓ Convertido: {os.path.basename(vag_file)} → {base_name}.wav")
-#         except subprocess.CalledProcessError as e:
-#             error_msg = e.stderr.decode().strip()
-#             print(f"✗ Error al convertir {os.path.basename(vag_file)}:\n{error_msg}")
-#         except FileNotFoundError:
-#             print("Error: FFmpeg no está instalado o no está en el PATH.")
-#             print("Descárgalo de https://ffmpeg.org/download.html y agrégalo al PATH.")
-#             return
-#         
-#         print(f"\n¡Conversión completada! Todos los WAV están en: {output_folder}")
-#             
-# if __name__ == "__main__":
-#     # Si pasas la carpeta como argumento en la terminal
-#     if len(sys.argv) > 1:
-#         folder = sys.argv[1].strip('"') # Quita comillas si copias y pegas ruta en Windows
-#     else:
-#         folder = input("Ingresa la ruta completa de la carpeta con los .vag: ").strip('"')
-#     
-#     convert_vag_to_wav(folder)
+"""
+VAG to WAV Converter
+====================
 
+A standalone utility that converts all .vag audio files in a directory
+to .wav format using vgmstream-cli.
 
+Requirements:
+    - vgmstream-cli.exe
 
+Author (of this script):
+    Nyx-Gleam
+
+License:
+    MIT License
+"""
+
+import glob
 import os
 import subprocess
 import sys
-import glob
+
 
 def convert_with_vgmstream(input_folder, vgmstream_path="vgmstream-cli.exe"):
+    """
+    Convert all VAG audio files in a folder to WAV format using vgmstream-cli.
+
+    Parameters
+    ----------
+    input_folder : str
+        Path to the folder containing .vag files.
+    vgmstream_path : str, optional
+        Path to the vgmstream-cli executable.
+        Defaults to "vgmstream-cli.exe".
+
+    Returns
+    -------
+    None
+    """
     if not os.path.isdir(input_folder):
-        print("Error: La ruta no es una carpeta válida.")
+        print("Error: The specified path is not a valid directory.")
         return
-    
+
     if not os.path.isfile(vgmstream_path):
-        print(f"Error: No se encuentra {vgmstream_path}. Colócalo en la misma carpeta que este script o indica la ruta completa.")
+        print(
+            f"Error: '{vgmstream_path}' was not found. "
+            "Place it in the same folder as this script or specify its full path."
+        )
         return
-    
-    # Carpeta de salida
+
+    # Create output directory
     folder_name = os.path.basename(os.path.normpath(input_folder))
     parent_folder = os.path.dirname(os.path.normpath(input_folder))
     output_folder = os.path.join(parent_folder, f"{folder_name}_wav")
-    
+
     os.makedirs(output_folder, exist_ok=True)
-    print(f"Carpeta de salida: {output_folder}")
-    
-    # Busca .vag
-    vag_files = glob.glob(os.path.join(input_folder, "*.vag")) + \
-                glob.glob(os.path.join(input_folder, "*.VAG"))
-    
+    print(f"Output folder: {output_folder}")
+
+    # Search for .vag files
+    vag_files = (
+        glob.glob(os.path.join(input_folder, "*.vag"))
+        + glob.glob(os.path.join(input_folder, "*.VAG"))
+    )
+
     if not vag_files:
-        print("No se encontraron archivos .vag.")
+        print("No .vag files were found.")
         return
-    
-    print(f"Se encontraron {len(vag_files)} archivos. Iniciando conversión...\n")
-    
+
+    print(f"Found {len(vag_files)} file(s). Starting conversion...\n")
+
     for vag_file in vag_files:
         base_name = os.path.splitext(os.path.basename(vag_file))[0]
         wav_file = os.path.join(output_folder, f"{base_name}.wav")
-        
-        # Comando: vgmstream-cli -i (ignore loop) -o output.wav input.vag
+
+        # vgmstream-cli -i (ignore loop) -o output.wav input.vag
         command = [vgmstream_path, "-i", "-o", wav_file, vag_file]
-        
+
         try:
-            subprocess.run(command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            print(f"✓ Convertido: {os.path.basename(vag_file)} → {base_name}.wav")
+            subprocess.run(
+                command,
+                check=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE
+            )
+            print(f"✓ Converted: {os.path.basename(vag_file)} → {base_name}.wav")
+
         except subprocess.CalledProcessError as e:
-            error_msg = e.stderr.decode().strip()
-            print(f"✗ Error en {os.path.basename(vag_file)}:\n{error_msg}")
+            error_msg = e.stderr.decode(errors="ignore").strip()
+            print(f"✗ Failed to convert {os.path.basename(vag_file)}:\n{error_msg}")
+
         except FileNotFoundError:
-            print("Error: vgmstream-cli no encontrado.")
+            print("Error: vgmstream-cli executable was not found.")
             return
-        
-        print(f"\n¡Listo! WAVs en: {output_folder}")
+
+    print(f"\nDone! Converted WAV files have been saved to:\n{output_folder}")
+
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         folder = sys.argv[1].strip('"')
     else:
-        folder = input("Ruta de la carpeta con .vag: ").strip('"')
-        
-        # Asume que vgmstream-cli.exe está en la misma carpeta que el script
-        convert_with_vgmstream(folder)
+        folder = input("Enter the folder containing .vag files: ").strip('"')
+
+    # Assume vgmstream-cli.exe is located next to this script.
+    convert_with_vgmstream(folder)
