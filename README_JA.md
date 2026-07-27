@@ -1,6 +1,6 @@
 # MikuMikuDB エディター
 
-🌐 **言語:** [English](./README.md) | [Español](./README.es.md) | 日本語
+🌐 **言語:** [English](./README.md) | [Español](./README_ES.md) | 日本語
 
 > Project Diva カスタム楽曲パック用の `mod_pv_db.txt` ファイルを生成する GUI アプリケーション。
 >
