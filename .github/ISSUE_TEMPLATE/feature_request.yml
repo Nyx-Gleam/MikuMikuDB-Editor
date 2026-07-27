@@ -1,0 +1,54 @@
+name: ✨ Feature Request
+description: Suggest an idea, improvement, or new feature for the editor.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        You can write this issue in **English, Spanish, or Japanese** — whichever is easiest for you.
+        コメントは英語・スペイン語・日本語のどれでも構いません。
+        Puedes escribir este issue en inglés, español o japonés — el que te resulte más cómodo.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Is this related to something the editor currently can't do, or does poorly?
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Describe the feature or change you'd like
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you've considered (optional)
+      description: Any workaround you're currently using, or other tools that do something similar.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of the editor does this relate to?
+      multiple: true
+      options:
+        - Song Editor (Basic Info / Difficulties / Performers / Song Info)
+        - Lyrics tab
+        - SFX tab
+        - Audio Variants
+        - BPM Calculator
+        - Installed Mods Browser
+        - PV ID validation
+        - Save/Load (.pdpack) / Auto-save
+        - mod_pv_db.txt import/export
+        - Localization / translations
+        - Other / not sure
+    validations:
+      required: false
