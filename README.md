@@ -5,11 +5,11 @@
 > A GUI application for generating `mod_pv_db.txt` files for custom Project Diva song packs.
 >
 > **Version 2.0 BETA** — rebuilt from scratch on PySide6 (Qt), with a modular codebase, a single trilingual build (English/Spanish/Japanese), and a large set of new tools and bug fixes over the original Tkinter version.
-
+ 
 ---
-
+ 
 ## Table of Contents
-
+ 
 1. [Overview](#overview)
 2. [What's New in 2.0](#whats-new-in-20)
 3. [Core Features](#core-features)
@@ -21,23 +21,21 @@
 9. [Project Structure](#project-structure)
 10. [License](#license)
 11. [Acknowledgments](#acknowledgments)
-
 ---
-
+ 
 ## Overview
-
+ 
 MikuMikuDB Editor streamlines the creation of `mod_pv_db.txt` — the configuration file powering custom song packs in Project Diva. With an intuitive interface, modders can define pack metadata, song details, difficulty levels, credits, lyrics, sound effects, performers, and multiple audio variants per track, all without writing code.
-
+ 
 * **Interface:** English, Spanish, and Japanese, switchable at any time from Settings (no more separate language builds).
 * **Packaging:** Single executable for Windows 10/11 — no Python or dependencies needed.
 * **Output:** Encrypted `.pdpack` project saves plus a final `mod_pv_db.txt` in UTF-8.
-
 ---
-
+ 
 ## What's New in 2.0
-
+ 
 This version is a full rewrite of the application, not just a feature update:
-
+ 
 * **New UI toolkit:** migrated from Tkinter to **PySide6 (Qt)** — native dark theme, native drag & drop, and HiDPI scaling that no longer needs a manual scaling system.
 * **Instant audio preview:** the old engine exported every preview to a temporary WAV file and played it through a subprocess; the new one uses `QMediaPlayer` directly, so previews and seeking are instant with no temp files.
 * **True trilingual interface:** English, Spanish, and Japanese now live in a single build and can be swapped from Settings at any time.
@@ -53,11 +51,10 @@ This version is a full rewrite of the application, not just a feature update:
 * **Online PV ID validation** — checks whether a PV ID is already used or reserved before you commit to it.
 * A standalone **`.pdpack` Decryptor Tool** is now included separately for diagnostics.
 * A long list of correctness fixes came out of the rewrite, among them: a broken encryption format that could never be reopened, filename collisions in autosaves, a severe freeze on startup, a hardcoded mods folder path, and incorrect difficulty level ranges.
-
 ---
-
+ 
 ## Core Features
-
+ 
 1. **Pack Metadata**
    * Enter **Pack Name** (Roman letters) and optional **Japanese Name**.
 2. **Song Library**
@@ -80,36 +77,60 @@ This version is a full rewrite of the application, not just a feature update:
 6. **Final Export**
    * Click **Generate File** to create a UTF-8 `mod_pv_db.txt` ready for a Project Diva pack.
    * Import an existing `mod_pv_db.txt` back into the editor at any time.
-
 ---
-
+ 
 ## Technical Requirements
-
+ 
 * **Windows 10 or 11** (64-bit recommended).
 * **Standalone build:** no installation of Python or libraries required — just run the executable.
 * **Running from source:** Python 3.12+, plus `PySide6`, `cryptography`, and `requests`. Optional: `pykakasi` (automatic Hiragana generation), `toml` (reading `config.toml`), and `numpy` + `madmom` (automatic BPM detection).
-
 ---
-
+ 
 ## Installation
-
+ 
 ### Quick Installation (GitHub)
-
+ 
 1. Visit the [GitHub Releases](https://github.com/Nyx-Gleam/MikuMikuDB-Editor/releases) page.
 2. Download the latest `MikuMikuDB Editor.exe`.
 3. Double-click to run; if Windows warns about an unknown publisher, right-click → **Properties** → check **Unblock** → **Apply**, then run again.
-
 ### Alternative Installation (GameBanana)
-
+ 
 1. Go to this tool's [GameBanana page](https://gamebanana.com/tools/19907).
 2. Download the latest version of the editor.
 3. Double-click `Editor.exe` to launch it — no installation required.
    * If Windows shows a security warning: right-click the file → **Properties** → check **Unblock** at the bottom → **Apply** → **OK**.
-
+### Running from Source
+ 
+1. Clone the repository:
+```bash
+   git clone https://github.com/Nyx-Gleam/MikuMikuDB-Editor.git
+   cd MikuMikuDB-Editor
+```
+2. Create a virtual environment (use whichever command works on your system — `py` or `python`):
+```bash
+   py -m venv venv
+   # or
+   python -m venv venv
+```
+3. Activate it:
+```bash
+   .\venv\Scripts\activate
+```
+4. Install dependencies:
+```bash
+   pip install -r requirements.txt
+```
+5. Run the app:
+```bash
+   py main.py
+```
+ 
+> **Note:** `pykakasi`, `toml`, and `numpy`+`madmom` are optional (see [requirements.txt](./requirements.txt)) — the app runs without them, just with automatic Hiragana generation and BPM auto-detect disabled.
+ 
 ---
-
+ 
 ## Step-by-Step Usage
-
+ 
 1. **Launch** the application and pick your interface language from **Settings** if needed.
 2. Enter **Pack Name** and optional **Japanese Name**.
 3. **Add Songs:**
@@ -125,29 +146,26 @@ This version is a full rewrite of the application, not just a feature update:
 6. Run **Validate Media Files** to make sure nothing is missing, and **Create Missing Folders** to scaffold your mod's folder structure.
 7. Save your project anytime via **Save Configuration** (`.pdpack`).
 8. When ready, click **Generate File** to export `mod_pv_db.txt`.
-
 ---
-
+ 
 ## Configuration & Auto-Save
-
+ 
 * **Auto-Save:** every 5 minutes, an encrypted `.pdpack` is saved to the `Autosaves/` folder (max 60 files).
 * **Manual Save/Load:** use **Save Configuration** / **Load Configuration** for encrypted project files; older `.pdpack` formats are migrated automatically.
 * **Load Autosave:** quickly restore from a recent backup.
-
 ---
-
+ 
 ## Exporting `mod_pv_db.txt`
-
+ 
 1. Make sure **Pack Name** is set and at least one song exists.
 2. Click **Generate File**.
 3. Choose a filename (default `mod_pv_db.txt`) and destination.
 4. A UTF-8 `mod_pv_db.txt` with the full pack definition is created.
 5. You can re-import that same file later with **Import mod_pv_db.txt** to keep editing it.
-
 ---
-
+ 
 ## Project Structure
-
+ 
 ```text
 MikuMikuDB-Editor/
 ├── main.py                  # Entry point
@@ -164,19 +182,20 @@ MikuMikuDB-Editor/
 ├── tests/                     # Regression test suite
 └── Autosaves/                 # Auto-saved .pdpack files
 ```
-
+ 
 ---
-
+ 
 ## License
-
+ 
 This project is released under the **MIT License**. See [LICENSE](./LICENSE) for details.
-
+ 
+This project bundles third-party components under their own licenses (including one LGPLv3 and one GPLv3 dependency). See [THIRD_PARTY_LICENSES.md](./THIRD_PARTY_LICENSES.md) for the full list.
+ 
 ---
-
+ 
 ## Acknowledgments
-
+ 
 * Inspired by the vibrant Project Diva modding community.
 * Developed and maintained by **NyxC**.
-<!--* Special thanks to all beta testers and contributors, especially for their patience through the 2.0 rewrite.-->
-
+* Special thanks to all beta testers and contributors, especially for their patience through the 2.0 rewrite.
 ![Rin Fuwapuchi](images/rin_fuwapuchi.png)
