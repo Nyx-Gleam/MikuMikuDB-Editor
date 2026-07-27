@@ -1,0 +1,1817 @@
+{
+    "title_en": "MikuMikuDB Editor",
+    "title_es": "MikuMikuDB Editor",
+    "title_ja": "MikuMikuDBエディタ",
+
+    "menu_file_import_en": "Import",
+    "menu_file_import_es": "Importar",
+    "menu_file_import_ja": "インポート",
+
+    "menu_file_generate_en": "Generate File",
+    "menu_file_generate_es": "Generar Archivo",
+    "menu_file_generate_ja": "ファイル生成",
+
+    "menu_file_save_en": "Save",
+    "menu_file_save_es": "Guardar",
+    "menu_file_save_ja": "保存",
+
+    "menu_file_load_en": "Load",
+    "menu_file_load_es": "Cargar",
+    "menu_file_load_ja": "読み込む",
+
+    "menu_file_load_autosave_en": "Load Autosave",
+    "menu_file_load_autosave_es": "Cargar Autoguardado",
+    "menu_file_load_autosave_ja": "自動保存を読み込む",
+
+    "menu_file_exit_en": "Quit",
+    "menu_file_exit_es": "Salir",
+    "menu_file_exit_ja": "終了",
+
+    "menu_file_header_en": "File",
+    "menu_file_header_es": "Archivo",
+    "menu_file_header_ja": "ファイル",
+
+    "menu_edit_add_song_en": "Add Song",
+    "menu_edit_add_song_es": "Añadir Canción",
+    "menu_edit_add_song_ja": "楽曲を追加",
+
+    "menu_edit_edit_song_en": "Edit Song",
+    "menu_edit_edit_song_es": "Editar Canción",
+    "menu_edit_edit_song_ja": "楽曲を編集",
+
+    "menu_edit_delete_song_en": "Delete Song",
+    "menu_edit_delete_song_es": "Eliminar Canción",
+    "menu_edit_delete_song_ja": "楽曲を削除",
+
+    "menu_edit_header_en": "Edit",
+    "menu_edit_header_es": "Editar",
+    "menu_edit_header_ja": "編集",
+
+    "menu_tools_validate_en": "Validate Media",
+    "menu_tools_validate_es": "Validar Media",
+    "menu_tools_validate_ja": "メディアの検証",
+
+    "menu_tools_create_folders_en": "Create Missing Folders",
+    "menu_tools_create_folders_es": "Crear Carpetas Faltantes",
+    "menu_tools_create_folders_ja": "不足しているフォルダを作成",
+
+    "menu_tools_header_en": "Tools",
+    "menu_tools_header_es": "Herramientas",
+    "menu_tools_header_ja": "ツール",
+
+    "menu_help_user_guide_en": "User Guide",
+    "menu_help_user_guide_es": "Guia de Usuario",
+    "menu_help_user_guide_ja": "ユーザーガイド",
+
+    "menu_help_header_en": "Help",
+    "menu_help_header_es": "Ayuda",
+    "menu_help_header_ja": "ヘルプ",
+
+    "settings_txt_en": "Settings",
+    "settings_txt_es": "Ajustes",
+    "settings_txt_ja": "設定",
+
+    "theme_txt_en": "Theme:",
+    "theme_txt_es": "Tema:",
+    "theme_txt_ja": "テーマ：",
+
+    "language_txt_en": "Language:",
+    "language_txt_es": "Idioma:",
+    "language_txt_ja": "言語：",
+
+    "language_changed_txt_en": "Language has been changed successfully.\nPlease restart the application to see all changes.",
+    "language_changed_txt_es": "El idioma se ha cambiado correctamente.\nReinicie la aplicación para ver todos los cambios.",
+    "language_changed_txt_ja": "言語は正常に変更されました。\nすべての変更を確認するには、アプリケーションを再起動してください。",
+
+    "language_err_txt_en": "Could not change language:",
+    "language_err_txt_es": "No se pudo cambiar el idioma:",
+    "language_err_txt_ja": "言語を変更できませんでした:",
+
+    "apply_settings_err_en": "Could not apply settings:",
+    "apply_settings_err_es": "No se pudieron aplicar las configuraciones:",
+    "apply_settings_err_ja": "設定を適用できませんでした:",
+
+    "apply_txt_en": "Apply",
+    "apply_txt_es": "Aplicar",
+    "apply_txt_ja": "適用する",
+
+    "apply_theme_txt_en": "Apply Theme",
+    "apply_theme_txt_es": "Aplicar Tema",
+    "apply_theme_txt_ja": "テーマを適用",
+
+    "song_pack_info_en": "Song Pack Information",
+    "song_pack_info_es": "Información del Paquete de Canciones",
+    "song_pack_info_ja": "ソングパック情報",
+
+    "pack_name_en": "Song Pack Name:",
+    "pack_name_es": "Nombre del Paquete de Canciones:",
+    "pack_name_ja": "曲パック名:",
+
+    "japanese_name_en": "Japanese Name:",
+    "japanese_name_es": "Nombre en Japones:",
+    "japanese_name_ja": "日本語名:",
+
+    "songs_en": "Songs",
+    "songs_es": "Canciones",
+    "songs_ja": "歌",
+
+    "pv_id_en": "PV ID",
+    "pv_id_es": "PV ID",
+    "pv_id_ja": "PV ID",
+
+    "name_en": "Original Name",
+    "name_es": "Nombre Original",
+    "name_ja": "元の名前",
+
+    "name_en_en": "English Name",
+    "name_en_es": "Nombre en Inglés",
+    "name_en_ja": "英語名",
+
+    "add_song_en": "Add Song",
+    "add_song_es": "Añadir Canción",
+    "add_song_ja": "曲を追加",
+
+    "edit_song_en": "Edit Song",
+    "edit_song_es": "Editar Canción",
+    "edit_song_ja": "曲を編集",
+
+    "delete_song_en": "Delete Song",
+    "delete_song_es": "Eliminar Canción",
+    "delete_song_ja": "曲を削除",
+
+    "gen_file_en": "Generate File",
+    "gen_file_es": "Generar Archivo",
+    "gen_file_ja": "ファイルを生成する",
+
+    "import_mod_pv_db_txt_en": "Import mod_pv_db.txt",
+    "import_mod_pv_db_txt_es": "Importar mod_pv_db.txt",
+    "import_mod_pv_db_txt_ja": "mod_pv_db.txt をインポートする",
+
+    "load_config_en": "Load Configuration",
+    "load_config_es": "Cargar Configuración",
+    "load_config_ja": "ロード構成",
+
+    "load_autosave_en": "Load Autosave",
+    "load_autosave_es": "Cargar Autoguardado",
+    "load_autosave_ja": "自動保存をロード",
+
+    "save_config_en": "Save Configuration",
+    "save_config_es": "Guardar Configuración",
+    "save_config_ja": "設定を保存",
+
+    "validate_media_en": "Validate Media Files",
+    "validate_media_es": "Validar archivos multimedia",
+    "validate_media_ja": "メディアファイルの検証",
+
+    "create_missing_folders_en": "Create Missing Folders",
+    "create_missing_folders_es": "Crear carpetas faltantes",
+    "create_missing_folders_ja": "不足しているフォルダを作成する",
+
+    "open_guide_en": "Open User Guide",
+    "open_guide_es": "Abrir la Guía del usuario",
+    "open_guide_ja": "ユーザーガイドを開く",
+
+    "guide_not_found_en": "The user guide was not found.",
+    "guide_not_found_es": "No se encontró la guía de usuario.",
+    "guide_not_found_ja": "ユーザーガイドが見つかりませんでした。",
+
+    "load_db_file_en": "Load a database file first",
+    "load_db_file_es": "Primero cargue un archivo de base de datos",
+    "load_db_file_ja": "最初にデータベースファイルをロードする",
+
+    "created_folders_en": "Created folders:",
+    "created_folders_es": "Carpetas creadas:",
+    "created_folders_ja": "作成されたフォルダー:",
+
+    "all_folder_exist_en": "All required folders already exist in the mod folder.",
+    "all_folder_exist_es": "Todas las carpetas necesarias ya existen en la carpeta mod.",
+    "all_folder_exist_ja": "必要なフォルダーはすべて mod フォルダーにすでに存在します。",
+
+    "could_not_apply_theme_en": "Couldn't apply theme",
+    "could_not_apply_theme_es": "No se pudo aplicar el tema",
+    "could_not_apply_theme_ja": "テーマを適用できませんでした",
+
+    "no_songs_added_en": "No songs have been added yet.",
+    "no_songs_added_es": "Aún no se han añadido canciones.",
+    "no_songs_added_ja": "まだ曲は追加されていません。",
+
+    "invalid_mod_pv_db_txt_en": "You must import a valid mod_pv_db.txt file first.\nDoes this file just got created?",
+    "invalid_mod_pv_db_txt_es": "Primero debes importar un archivo mod_pv_db.txt válido.\n¿Este archivo acaba de crearse?",
+    "invalid_mod_pv_db_txt_ja": "まず有効な mod_pv_db.txt ファイルをインポートする必要があります。\nこのファイルは作成されたばかりですか?",
+
+    "all_media_found_en": "All media files found!",
+    "all_media_found_es": "¡Se encontraron todos los archivos multimedia!",
+    "all_media_found_ja": "すべてのメディア ファイルが見つかりました。",
+
+    "media_files_missing_en": "The following media files are missing:",
+    "media_files_missing_es": "Faltan los siguientes archivos multimedia:",
+    "media_files_missing_ja": "次のメディア ファイルが見つかりません:",
+
+    "3d_pv_info_en": "If the char has a 3D PV, please ignore errors related to its video.\n\n",
+    "3d_pv_info_es": "Si el char tiene un PV 3D, ignore los errores relacionados con su video.\n\n",
+    "3d_pv_info_ja": "キャラクターに 3D PV がある場合は、ビデオに関連するエラーは無視してください。\n\n",
+
+    "select_song_first_en": "Select a song to edit",
+    "select_song_first_es": "Seleccione una canción para editar",
+    "select_song_first_ja": "編集する曲を選択",
+
+    "select_to_delete_en": "Select a song to delete",
+    "select_to_delete_es": "Seleccione una canción para eliminar",
+    "select_to_delete_ja": "削除する曲を選択してください",
+
+    "song_delete_confirm_en": "Are you sure you want to delete this song?",
+    "song_delete_confirm_es": "¿Estás seguro de que quieres eliminar esta canción?",
+    "song_delete_confirm_ja": "この曲を削除してもよろしいですか?",
+
+    "genfile_1_en": "• Enter the Song Pack name",
+    "genfile_1_es": "• Ingrese el nombre del paquete de canciones",
+    "genfile_1_ja": "• ソングパック名を入力します",
+
+    "genfile_2_en": "• Add at least one song",
+    "genfile_2_es": "• Añade al menos una canción",
+    "genfile_2_ja": "• 少なくとも1曲追加する",
+
+    "genfile_3_en": "• Duplicate PV ID",
+    "genfile_3_es": "• PV ID duplicado",
+    "genfile_3_ja": "• 重複したPV ID",
+
+    "genfile_4_en": "  First song:",
+    "genfile_4_es": "  Primera canción:",
+    "genfile_4_ja": "  最初の曲：",
+
+    "genfile_5_en": "  Duplicate song:",
+    "genfile_5_es": "  Canción duplicada:",
+    "genfile_5_ja": "  重複した曲:",
+
+    "genfile_6_en": "Song PV",
+    "genfile_6_es": "Canción PV",
+    "genfile_6_ja": "楽曲PV",
+
+    "genfile_7_en": "'Original name' is required",
+    "genfile_7_es": "Se requiere 'Nombre original'",
+    "genfile_7_ja": "「元の名前」は必須です",
+
+    "genfile_8_en": "'English name' is required",
+    "genfile_8_es": "Se requiere 'Nombre en Inglés'",
+    "genfile_8_ja": "「英語名」は必須です",
+
+    "genfile_9_en": "'Name reading' is required",
+    "genfile_9_es": "Se requiere 'Nombre en Hiragana'",
+    "genfile_9_ja": "「名前の読み方」は必須です",
+
+    "genfile_10_en": "BPM is required",
+    "genfile_10_es": "El BPM es requerido",
+    "genfile_10_ja": "BPMが必要です",
+
+    "genfile_11_en": "BPM must be greater than 0",
+    "genfile_11_es": "BPM debe ser mayor que 0",
+    "genfile_11_ja": "BPMは0より大きくなければなりません",
+
+    "genfile_12_en": "BPM must be a valid number",
+    "genfile_12_es": "BPM debe ser un número válido",
+    "genfile_12_ja": "BPMは有効な数値である必要があります",
+
+    "genfile_13_en": "'Sabi start time' is required",
+    "genfile_13_es": "Se requiere 'Tiempo de inicio de Sabi'",
+    "genfile_13_ja": "「サビ開始時間」は必須です",
+
+    "genfile_14_en": "'Sabi start time' must be 0 or greater",
+    "genfile_14_es": "El 'Tiempo de inicio de Sabi' debe ser 0 o mayor",
+    "genfile_14_ja": "「Sabi開始時間」は0以上である必要があります",
+
+    "genfile_15_en": "'Sabi start time' must be a valid number",
+    "genfile_15_es": "'Tiempo de inicio de Sabi' debe ser un número válido",
+    "genfile_15_ja": "「Sabi開始時間」は有効な数値である必要があります",
+
+    "genfile_16_en": "'Sabi duration' is required",
+    "genfile_16_es": "Se requiere 'Duración de Sabi'",
+    "genfile_16_ja": "「サビ期間」は必須です",
+
+    "genfile_17_en": "'Sabi duration' must be greater than 0",
+    "genfile_17_es": "La duración de Sabi debe ser mayor que 0",
+    "genfile_17_ja": "「サビ期間」は0より大きくなければなりません",
+
+    "genfile_18_en": "'Sabi duration' must be a valid number",
+    "genfile_18_es": "'Duración del Sabi' debe ser un número válido",
+    "genfile_18_ja": "「サビ期間」は有効な数値である必要があります",
+
+    "genfile_19_en": "At least one difficulty must be selected",
+    "genfile_19_es": "Se debe seleccionar al menos una dificultad",
+    "genfile_19_ja": "少なくとも1つの難易度を選択する必要があります",
+
+    "genfile_20_en": "Must have at least 1 performer",
+    "genfile_20_es": "Debe tener al menos 1 intérprete",
+    "genfile_20_ja": "少なくとも1人の出演者が必要です",
+
+    "genfile_21_en": "'Original name' is required",
+    "genfile_21_es": "'Nombre original' es requerido",
+    "genfile_21_ja": "「元の名前」は必須です",
+
+    "genfile_22_en": "'English name' is required",
+    "genfile_22_es": "'Nombre en Inglés' es requerido",
+    "genfile_22_ja": "「英語名」は必須です",
+
+    "genfile_23_en": "'Variant artist' is required",
+    "genfile_23_es": "'Artista de variante' es requerido",
+    "genfile_23_ja": "「バリアントアーティスト」は必須です",
+
+    "genfile_24_en": "'Variant artist in english' is required",
+    "genfile_24_es": "'Artista de variante en Inglés' es requerido",
+    "genfile_24_ja": "「英語のヴァリアントアーティスト」が必要です",
+
+    "genfile_25_en": "'Variant file name suffix' is required",
+    "genfile_25_es": "'Nombre del sufijo del archivo de la variante' es requerido",
+    "genfile_25_ja": "「バリアントファイル名のサフィックス」は必須です",
+
+    "genfile_26_en": "Must have at least 1 performer",
+    "genfile_26_es": "Debe tener al menos 1 intérprete",
+    "genfile_26_ja": "少なくとも1人の出演者が必要です",
+
+    "genfile_27_en": "Please fix the following errors:",
+    "genfile_27_es": "Por favor corrija los siguientes errores:",
+    "genfile_27_ja": "次のエラーを修正してください:",
+    
+    "genfile_28_en": "Text files",
+    "genfile_28_es": "Archivos de texto",
+    "genfile_28_ja": "テキストファイル",
+    
+    "genfile_29_en": "All files",
+    "genfile_29_es": "Todos los archivos",
+    "genfile_29_ja": "すべてのファイル",
+
+    "fiel_gen_successful_en": "File generated successfully:",
+    "fiel_gen_successful_es": "Archivo generado exitosamente:",
+    "fiel_gen_successful_ja": "ファイルが正常に生成されました:",
+
+    "err_saving_file_en": "Error saving file:",
+    "err_saving_file_es": "Error al guardar el archivo:",
+    "err_saving_file_ja": "ファイルの保存中にエラーが発生しました:",
+
+    "GEN_FILE_TOOL_en": "Generated by MikuMikuDB Editor",
+    "GEN_FILE_TOOL_es": "Generado por MikuMikuDB Editor",
+    "GEN_FILE_TOOL_ja": "MikuMikuDBエディタで生成",
+
+    "GEN_FILE_CREATOR_en": "Tool created by NyxC",
+    "GEN_FILE_CREATOR_es": "Herramienta creada por NyxC",
+    "GEN_FILE_CREATOR_ja": "NyxC によって作成されたツール",
+
+    "GEN_FILE_ADDITIONAL_CHARTS_TXT_en": "Additional Charts",
+    "GEN_FILE_ADDITIONAL_CHARTS_TXT_es": "| Charts Adicionales",
+    "GEN_FILE_ADDITIONAL_CHARTS_TXT_ja": "追加のチャート",
+
+    "pdmdbf_en": "Project Diva MM+ Mod DB files",
+    "pdmdbf_es": "Archivos Mod DB de Project Diva MM+",
+    "pdmdbf_ja": "Project Diva MM+ Mod DB ファイル",
+
+    "all_files_en": "All files",
+    "all_files_es": "Todos los archivos",
+    "all_files_ja": "すべてのファイル",
+
+    "import_mpvdb_en": "Import mod_pv_db.txt file",
+    "import_mpvdb_es": "Importar archivo mod_pv_db.txt",
+    "import_mpvdb_ja": "mod_pv_db.txtファイルをインポートする",
+
+    "no_valid_songs_en": "No valid songs found in the file",
+    "no_valid_songs_es": "No se encontraron canciones válidas en el archivo",
+    "no_valid_songs_ja": "ファイルに有効な曲が見つかりません",
+
+    "import_1_en": "Found",
+    "import_1_es": "Se encontraron",
+    "import_1_ja": "ファイル内に",
+
+    "import_2_en": "songs in the file.",
+    "import_2_es": "canciones en el archivo.",
+    "import_2_ja": "曲が見つかりました。",
+
+    "import_3_en": "Yes: Replace current songs",
+    "import_3_es": "Si: Reemplazar canciones actuales",
+    "import_3_ja": "はい: 現在の曲を置き換える",
+
+    "import_4_en": "No: Add to current songs",
+    "import_4_es": "No: Añadir a las canciones actuales",
+    "import_4_ja": "いいえ: 現在の曲に追加",
+
+    "import_5_en": "Cancel: Cancel import",
+    "import_5_es": "Cancelar: Cancelar la importación",
+    "import_5_ja": "キャンセル: インポートをキャンセル",
+
+    "import_success_1_en": "Successfully imported",
+    "import_success_1_es": "Se importaron correctamente",
+    "import_success_1_ja": "mod_pv_db.txt から",
+
+    "import_success_2_en": "songs from mod_pv_db.txt",
+    "import_success_2_es": "canciones desde mod_pv_db.txt",
+    "import_success_2_ja": "曲を正常にインポートしました",
+
+    "import_failed_en": "Error importing file:",
+    "import_failed_es": "Error al importar el archivo:",
+    "import_failed_ja": "ファイルのインポート中にエラーが発生しました:",
+
+    "no_songs_to_save_en": "No songs to save",
+    "no_songs_to_save_es": "No hay canciones para guardar",
+    "no_songs_to_save_ja": "保存する曲はありません",
+
+    "pdpack_file_en": "PDPack files",
+    "pdpack_file_es": "PDPack files (no se me ocurrio mejor nombre)",
+    "pdpack_file_ja": "PDPackファイル",
+
+    "encrypted_config_saved_en": "Encrypted configuration saved:",
+    "encrypted_config_saved_es": "Configuración cifrada guardada:",
+    "encrypted_config_saved_ja": "暗号化された構成が保存されました:",
+
+    "err_encrypted_config_en": "Error saving encrypted configuration:",
+    "err_encrypted_config_es": "Error al guardar la configuración cifrada:",
+    "err_encrypted_config_ja": "暗号化された構成の保存中にエラーが発生しました:",
+
+    "config_loaded_en": "Configuration loaded",
+    "config_loaded_es": "Configuración cargada",
+    "config_loaded_ja": "構成が読み込まれました",
+
+    "err_config_loaded_en": "Error loading configuration:",
+    "err_config_loaded_es": "Error al cargar la configuración:",
+    "err_config_loaded_ja": "構成の読み込み中にエラーが発生しました:",
+
+    "migration_complete_1_en": "File successfully converted to encrypted format.",
+    "migration_complete_1_es": "Archivo convertido exitosamente al formato encriptado.",
+    "migration_complete_1_ja": "ファイルは暗号化形式に正常に変換されました。",
+
+    "migration_complete_2_en": "Backup saved as:",
+    "migration_complete_2_es": "Copia de seguridad guardada como:",
+    "migration_complete_2_ja": "バックアップは次のように保存されました:",
+
+    "migration_error_en": "Failed to migrate file:",
+    "migration_error_es": "Error al migrar el archivo:",
+    "migration_error_ja": "ファイルの移行に失敗しました:",
+
+    "no_autosave_files_en": "No autosave files available",
+    "no_autosave_files_es": "No hay archivos de guardado automático disponibles",
+    "no_autosave_files_ja": "自動保存ファイルはありません",
+
+    "encrypted_en": "[ENCRYPTED]",
+    "encrypted_es": "[CIFRADO]",
+    "encrypted_ja": "[暗号化済み]",
+
+    "select_autosave_file_en": "Select an autosave file",
+    "select_autosave_file_es": "Seleccionar un archivo de guardado automático",
+    "select_autosave_file_ja": "自動保存ファイルを選択",
+
+    "encrypted_autosave_loaded_en": "Encrypted autosave loaded:",
+    "encrypted_autosave_loaded_es": "Guardado automático cifrado cargado:",
+    "encrypted_autosave_loaded_ja": "暗号化された自動保存がロードされました:",
+
+    "encrypted_autosave_failed_loaded_en": "Error loading encrypted autosave:",
+    "encrypted_autosave_failed_loaded_es": "Error al cargar el guardado automático cifrado:",
+    "encrypted_autosave_failed_loaded_ja": "暗号化された自動保存の読み込み中にエラーが発生しました:",
+
+    "drag_n_drop_en": "📁 Drag & Drop .pdpack or .txt files here",
+    "drag_n_drop_es": "📁 Arrastre y suelte archivos .pdpack o .txt aquí",
+    "drag_n_drop_ja": "📁 .pdpack または .txt ファイルをここにドラッグ＆ドロップします",
+
+    "drag_n_drop_txt_en": "📁 Import Configuration or Database Files",
+    "drag_n_drop_txt_es": "📁 Importar archivos de configuración o de base de datos",
+    "drag_n_drop_txt_ja": "📁 設定ファイルまたはデータベースファイルのインポート",
+
+    "suported_files_txt_en": "Supported: .pdpack (Configuration) | .txt (Database)",
+    "suported_files_txt_es": "Compatible con: .pdpack (Configuración) | .txt (Base de datos)",
+    "suported_files_txt_ja": "サポート対象: .pdpack (構成) | .txt (データベース)",
+
+    "import_config_txt_en": "Import Configuration (.pdpack)",
+    "import_config_txt_es": "Configuración de importación (.pdpack)",
+    "import_config_txt_ja": "インポート構成 (.pdpack)",
+
+    "import_db_txt_en": "Import Database (.txt)",
+    "import_db_txt_es": "Importar base de datos (.txt)",
+    "import_db_txt_ja": "インポート データベース (.txt)",
+
+    "select_config_file_en": "Select Configuration File",
+    "select_config_file_es": "Seleccionar archivo de configuración",
+    "select_config_file_ja": "設定ファイルを選択",
+
+    "err_importing_config_en": "Error importing configuration file:",
+    "err_importing_config_es": "Error al importar el archivo de configuración:",
+    "err_importing_config_ja": "構成ファイルのインポート中にエラーが発生しました:",
+
+    "err_importing_db_en": "Error importing database file:",
+    "err_importing_db_es": "Error al importar el archivo de base de datos:",
+    "err_importing_db_ja": "データベースファイルのインポート中にエラーが発生しました:",
+
+    "processing_txt_en": "Processing",
+    "processing_txt_es": "Procesando",
+    "processing_txt_ja": "処理する",
+
+    "unsupported_file_1_en": "File type",
+    "unsupported_file_1_es": "El tipo de archivo",
+    "unsupported_file_1_ja": "ファイルタイプ",
+
+    "unsupported_file_2_en": "is not supported.",
+    "unsupported_file_2_es": "no es compatible.",
+    "unsupported_file_2_ja": "はサポートされていません。",
+
+    "unsupported_file_3_en": "Supported formats:",
+    "unsupported_file_3_es": "Formatos admitidos:",
+    "unsupported_file_3_ja": "サポートされている形式:",
+
+    "unsupported_file_4_en": "• .pdpack (Configuration files)",
+    "unsupported_file_4_es": "• .pdpack (Archivos de configuración)",
+    "unsupported_file_4_ja": "• .pdpack (設定ファイル)",
+
+    "unsupported_file_5_en": "• .txt (Database files)",
+    "unsupported_file_5_es": "• .txt (Archivos de base de datos)",
+    "unsupported_file_5_ja": "• .txt（データベースファイル）",
+
+    "file_loaded_1_en": "",
+    "file_loaded_1_es": "Archivo",
+    "file_loaded_1_ja": "",
+
+    "file_loaded_2_en": "file loaded:",
+    "file_loaded_2_es": "cargado:",
+    "file_loaded_2_ja": "ファイルが読み込まれました:",
+
+    "err_process_file_en": "Error processing file:",
+    "err_process_file_es": "Error al procesar el archivo:",
+    "err_process_file_ja": "ファイル処理エラー:",
+
+    "err_handling_file_en": "Error handling dropped file:",
+    "err_handling_file_es": "Error en el manejo del archivo caído:",
+    "err_handling_file_ja": "ドロップされたファイルの処理中にエラーが発生しました:",
+
+    "load_config_ync_1_en": "Se encontró un archivo .pdpack válido",
+    "load_config_ync_1_es": "有効な.pdpackファイルが見つかりました",
+    "load_config_ync_1_ja": "",
+
+    "load_config_ync_2_en": "",
+    "load_config_ync_2_es": "Formato ",
+    "load_config_ync_2_ja": "",
+
+    "load_config_ync_3_en": "format",
+    "load_config_ync_3_es": "",
+    "load_config_ync_3_ja": "形式",
+
+    "load_config_ync_4_en": "Songs:",
+    "load_config_ync_4_es": "Canciones:",
+    "load_config_ync_4_ja": "楽曲:",
+
+    "load_config_ync_5_en": "Pack Name:",
+    "load_config_ync_5_es": "Nombre del Paquete:",
+    "load_config_ync_5_ja": "パック名:",
+
+    "load_config_ync_6_en": "Yes: Replace current data",
+    "load_config_ync_6_es": "Sí: Reemplazar los datos actuales",
+    "load_config_ync_6_ja": "はい: 現在のデータを置き換えます",
+
+    "load_config_ync_7_en": "No: Merge with current data",
+    "load_config_ync_7_es": "No: Añadir a los datos actuales",
+    "load_config_ync_7_ja": "いいえ: 現在のデータと結合する",
+
+    "load_config_ync_8_en": "Cancel: Don't load",
+    "load_config_ync_8_es": "Cancelar: No cargar",
+    "load_config_ync_8_ja": "キャンセル: 読み込まない",
+
+    "load_db_ync_1_en": "Found valid mod_pv_db.txt file",
+    "load_db_ync_1_es": "Se encontró un archivo mod_pv_db.txt válido",
+    "load_db_ync_1_ja": "有効なmod_pv_db.txtファイルが見つかりました",
+
+    "load_db_ync_2_en": "Songs detected:",
+    "load_db_ync_2_es": "Canciones detectadas:",
+    "load_db_ync_2_ja": "検出された曲:",
+
+    "load_db_ync_3_en": "Yes: Replace current songs",
+    "load_db_ync_3_es": "Si: Reemplazar canciones actuales",
+    "load_db_ync_3_ja": "はい: 現在の曲を置き換える",
+
+    "load_db_ync_4_en": "No: Add to current songs",
+    "load_db_ync_4_es": "No: Agregar a las canciones actuales",
+    "load_db_ync_4_ja": "いいえ: 現在の曲に追加",
+
+    "load_db_ync_5_en": "Cancel: Don't import",
+    "load_db_ync_5_es": "Cancelar: No importar",
+    "load_db_ync_5_ja": "キャンセル: インポートしない",
+
+    "drag_n_drop_tip_txt_en": "📁 Drag & Drop files here",
+    "drag_n_drop_tip_txt_es": "📁 Arrastre y suelte archivos aquí",
+    "drag_n_drop_tip_txt_ja": "📁 ファイルをここにドラッグ＆ドロップ",
+
+    "app_supported_files_en": "Supported: .pdpack (Configuration) | .txt (Database)",
+    "app_supported_files_es": "Compatible con: .pdpack (Configuración) | .txt (Base de datos)",
+    "app_supported_files_ja": "サポート対象: .pdpack (構成) | .txt (データベース)",
+
+    "drag_n_drop_ready_en": "Ready to receive files...",
+    "drag_n_drop_ready_es": "Listo para recibir archivos...",
+    "drag_n_drop_ready_ja": "ファイルを受信する準備ができました...",
+
+    "drop_to_import_en": "Drop file to import...",
+    "drop_to_import_es": "Suelte el archivo para importarlo...",
+    "drop_to_import_ja": "インポートするファイルをドロップします...",
+
+    "characters_mik_en": "Hatsune Miku",
+    "characters_mik_es": "Hatsune Miku",
+    "characters_mik_ja": "初音 ミク",
+
+    "characters_rin_en": "Kagamine Rin",
+    "characters_rin_es": "Kagamine Rin",
+    "characters_rin_ja": "鏡音リン",
+
+    "characters_len_en": "Kagamine Len",
+    "characters_len_es": "Kagamine Len",
+    "characters_len_ja": "鏡音レン",
+
+    "characters_luk_en": "Megurine Luka",
+    "characters_luk_es": "Megurine Luka",
+    "characters_luk_ja": "巡りね ぅか",
+
+    "characters_kai_en": "KAITO",
+    "characters_kai_es": "KAITO",
+    "characters_kai_ja": "カイト",
+
+    "characters_mei_en": "MEIKO",
+    "characters_mei_es": "MEIKO",
+    "characters_mei_ja": "メイコ",
+
+    "characters_hak_en": "Yowane Haku",
+    "characters_hak_es": "Yowane Haku",
+    "characters_hak_ja": "弱音ハク",
+
+    "characters_ner_en": "Akita Neru",
+    "characters_ner_es": "Akita Neru",
+    "characters_ner_ja": "亞北ネル",
+
+    "characters_sak_en": "Sakine Meiko",
+    "characters_sak_es": "Sakine Meiko",
+    "characters_sak_ja": "咲音メイコ",
+
+    "characters_tet_en": "Kasane Teto",
+    "characters_tet_es": "Kasane Teto",
+    "characters_tet_ja": "重音テト",
+
+    "diff_easy_en": "Easy",
+    "diff_easy_es": "Fácil",
+    "diff_easy_ja": "簡単",
+
+    "diff_normal_en": "Normal",
+    "diff_normal_es": "Normal",
+    "diff_normal_ja": "普通",
+
+    "diff_hard_en": "Hard",
+    "diff_hard_es": "Difícil",
+    "diff_hard_ja": "難しい",
+
+    "diff_ext_en": "Extreme",
+    "diff_ext_es": "Extremo",
+    "diff_ext_ja": "過激",
+
+    "diff_ex_ext_en": "Extra Extreme",
+    "diff_ex_ext_es": "Extra Extremo",
+    "diff_ex_ext_ja": "エクストラエクストリーム（少し長い）",
+
+    "diff_lvl_txt_en": "Level:",
+    "diff_lvl_txt_es": "Nivel de dificultad:",
+    "diff_lvl_txt_ja": "難易度:",
+
+    "songinfo_arranger_en": "Arranger",
+    "songinfo_arranger_es": "Arreglista",
+    "songinfo_arranger_ja": "アレンジャー",
+
+    "songinfo_guitar_player_en": "Guitar Player",
+    "songinfo_guitar_player_es": "Guitarrista",
+    "songinfo_guitar_player_ja": "ギター奏者",
+
+    "songinfo_lyricist_en": "Lyricist",
+    "songinfo_lyricist_es": "Letrista",
+    "songinfo_lyricist_ja": "作詞家",
+
+    "songinfo_manipulator_en": "Manipulator",
+    "songinfo_manipulator_es": "Manipulador",
+    "songinfo_manipulator_ja": "マニピュレータ",
+
+    "songinfo_comp_art_en": "Composer/Artist",
+    "songinfo_comp_art_es": "Compositor/Artista",
+    "songinfo_comp_art_ja": "作曲家/アーティスト",
+
+    "songinfo_pv_editor_en": "PV Editor",
+    "songinfo_pv_editor_es": "Editor de PV",
+    "songinfo_pv_editor_ja": "PVエディター",
+
+    "songinfo_illustrator_en": "Illustrator",
+    "songinfo_illustrator_es": "Ilustrador",
+    "songinfo_illustrator_ja": "イラストレーター",
+
+    "songinfo_og_txt_en": "Original",
+    "songinfo_og_txt_es": "Original",
+    "songinfo_og_txt_ja": "オリジナル",
+
+    "songinfo_en_txt_en": "English",
+    "songinfo_en_txt_es": "Inglés",
+    "songinfo_en_txt_ja": "英語",
+
+    "error_incomplete_songinfo_en": "* At least one field in Original and one in English must be completed",
+    "error_incomplete_songinfo_es": "* Se debe completar al menos un campo en Original y uno en Inglés",
+    "error_incomplete_songinfo_ja": "* 少なくとも1つのフィールドは原文で、もう1つのフィールドは英語で入力する必要があります。",
+
+    "varsframe_og_name_txt_en": "Original Name",
+    "varsframe_og_name_txt_es": "Nombre Original",
+    "varsframe_og_name_txt_ja": "元の名前",
+
+    "varsframe_en_name_txt_en": "English Name",
+    "varsframe_en_name_txt_es": "Nombre en Inglés",
+    "varsframe_en_name_txt_ja": "英語名",
+
+    "varsframe_artist_txt_en": "Artist",
+    "varsframe_artist_txt_es": "Artista",
+    "varsframe_artist_txt_ja": "アーティスト",
+
+    "fields_variant_name_en": "Variant name: *",
+    "fields_variant_name_es": "Nombre de la variante: *",
+    "fields_variant_name_ja": "バリアント名: *",
+
+    "fields_english_name_en": "English name: *",
+    "fields_english_name_es": "Nombre en Inglés: *",
+    "fields_english_name_ja": "英語名: *",
+
+    "fields_variant_displayname_en": "Variant displayname: *",
+    "fields_variant_displayname_es": "Nombre que aparece en la configuración de la canción: *",
+    "fields_variant_displayname_ja": "バリアント表示名: *",
+
+    "fields_displayname_in_english_en": "Displayname in English: *",
+    "fields_displayname_in_english_es": "Nombre que aparece en la configuración de la canción en Inglés: *",
+    "fields_displayname_in_english_ja": "英語での表示名: *",
+
+    "fields_audio_file_suffix_en": "Audio file suffix: *",
+    "fields_audio_file_suffix_es": "Sufijo del archivo de audio: *",
+    "fields_audio_file_suffix_ja": "オーディオファイルの拡張子: *",
+
+    "performers_selected_performers_en": "Selected performers:",
+    "performers_selected_performers_es": "Personajes seleccionados:",
+    "performers_selected_performers_ja": "選ばれた出演者:",
+
+    "performers_select_character_en": "Select character:",
+    "performers_select_character_es": "Seleccionar personaje:",
+    "performers_select_character_ja": "文字を選択:",
+
+    "required_fields_en": "* Required fields",
+    "required_fields_es": "* Campos requeridos",
+    "required_fields_ja": "* 必須項目",
+
+    "error_invalid_sabi_1_en": "Invalid sabi start/duration.",
+    "error_invalid_sabi_1_es": "Valor invalido del inicio/duracion del sabi.",
+    "error_invalid_sabi_1_ja": "無効なサビの開始/期間です。",
+
+    "error_invalid_suffix_en": "File suffix for audio variant is required.",
+    "error_invalid_suffix_es": "El sufijo del archivo para la variante de audio es requerido",
+    "error_invalid_suffix_ja": "オーディオバリアントのファイルサフィックスが必要です。",
+
+    "error_pv_id_not_defined_en": "PV ID not defined",
+    "error_pv_id_not_defined_es": "PV ID no está definido",
+    "error_pv_id_not_defined_ja": "PV IDが定義されていません",
+
+    "error_db_path_not_found_en": "Database path not found. Please load a mod_pv_db.txt file first.",
+    "error_db_path_not_found_es": "No se encontró la ruta de la base de datos. Cargue primero un archivo mod_pv_db.txt.",
+    "error_db_path_not_found_ja": "データベースパスが見つかりません。まずmod_pv_db.txtファイルを読み込んでください。",
+
+    "error_db_file_not_found_en": "Database file not found:",
+    "error_db_file_not_found_es": "Archivo de base de datos no encontrado:",
+    "error_db_file_not_found_ja": "データベースファイルが見つかりません:",
+
+    "error_audio_file_not_found_en": "Audio file not found for PV ID:",
+    "error_audio_file_not_found_es": "Archivo de audio no encontrado para PV ID:",
+    "error_audio_file_not_found_ja": "PV ID のオーディオファイルが見つかりません:",
+
+    "error_invalid_time_range_en": "Invalid time range for audio fragment",
+    "error_invalid_time_range_es": "Rango de tiempo no válido para el fragmento de audio",
+    "error_invalid_time_range_ja": "オーディオフラグメントの時間範囲が無効です",
+
+    "error_audio_playback_failed_1_en": "Audio playback failed:",
+    "error_audio_playback_failed_1_es": "Error en la reproducción de audio:",
+    "error_audio_playback_failed_1_ja": "オーディオの再生に失敗しました:",
+
+    "error_audio_playback_failed_2_en": "Alternative method also failed:",
+    "error_audio_playback_failed_2_es": "El método alternativo también falló:",
+    "error_audio_playback_failed_2_ja": "代替方法も失敗しました:",
+
+    "error_more_than_6_performers_var_en": "Cannot add more than 6 performers to a variant",
+    "error_more_than_6_performers_var_es": "No se pueden agregar más de 6 artistas a una variante",
+    "error_more_than_6_performers_var_ja": "バリアントに 6 人以上のパフォーマーを追加することはできません",
+
+    "error_must_have_1_performer_var_en": "Variant must have at least 1 performer",
+    "error_must_have_1_performer_var_es": "La variante debe tener al menos 1 intérprete",
+    "error_must_have_1_performer_var_ja": "バリアントには少なくとも 1 人の出演者が必要です",
+    
+    "variant_err_name_required_en": "Variant name is required",
+    "variant_err_name_required_es": "El nombre de la variante es obligatorio",
+    "variant_err_name_required_ja": "バリアント名は必須です",
+
+    "variant_err_name_en_required_en": "English variant name is required",
+    "variant_err_name_en_required_es": "El nombre en Inglés de la variante es obligatorio",
+    "variant_err_name_en_required_ja": "英語の異体名が必要です",
+
+    "variant_err_suffix_required_en": "Variant audio file suffix is required",
+    "variant_err_suffix_required_es": "El sufijo del archivo de audio de la variante es obligatorio",
+    "variant_err_suffix_required_ja": "バリアントオーディオファイルのサフィックスが必要です",
+
+    "variant_err_displayname_required_en": "Variant display name (original and english) are required",
+    "variant_err_displayname_required_es": "El nombre para mostrar de la variante (original e inglés) son obligatorios",
+    "variant_err_displayname_required_ja": "バリアントの表示名（日本語と英語）は必須です",
+
+    "variant_err_performer_required_en": "Variant must have exactly one performer selected",
+    "variant_err_performer_required_es": "La variante debe tener exactamente un intérprete seleccionado",
+    "variant_err_performer_required_ja": "バリアントには正確に1人の出演者を選択する必要があります",
+
+    "error_fill_following_fields_en": "Please fill in the following required fields:",
+    "error_fill_following_fields_es": "Por favor, rellene los siguientes campos obligatorios:",
+    "error_fill_following_fields_ja": "以下の必須フィールドに入力してください。",
+
+    "songfield_original_name_en": "Original name: *",
+    "songfield_original_name_es": "Nombre original: *",
+    "songfield_original_name_ja": "元の名前: *",
+
+    "songfield_english_name_en": "English name: *",
+    "songfield_english_name_es": "Nombre en Inglés: *",
+    "songfield_english_name_ja": "英語名: *",
+
+    "songfield_hiragana_name_en": "Hiragana name: *",
+    "songfield_hiragana_name_es": "Nombre en Hiragana: *",
+    "songfield_hiragana_name_ja": "ひらがなの名前: *",
+
+    "songfield_generate_hira_name_en": "Generate Hiragana Name: *",
+    "songfield_generate_hira_name_es": "Generar Nombre en Hiragana: *",
+    "songfield_generate_hira_name_ja": "ひらがなの名前を生成する: *",
+
+    "songfield_bpm_en": "BPM: *",
+    "songfield_bpm_es": "BPM: *",
+    "songfield_bpm_ja": "BPM: *",
+
+    "songfield_bpm_calculator_en": "BPM Calculator: *",
+    "songfield_bpm_calculator_es": "Calculadora de BPM: *",
+    "songfield_bpm_calculator_ja": "BPM計算機: *",
+
+    "songfield_sabi_s_time_en": "Sabi start time: *",
+    "songfield_sabi_s_time_es": "Tiempo de inicio de Sabi: *",
+    "songfield_sabi_s_time_ja": "サビ開始時間: *",
+
+    "songfield_sabi_du_en": "Sabi duration: *",
+    "songfield_sabi_du_es": "Duración del Sabi: *",
+    "songfield_sabi_du_ja": "サビ期間: *",
+
+    "songfield_song_preview_en": "▶ Preview: *",
+    "songfield_song_preview_es": "▶ Vista previa: *",
+    "songfield_song_preview_ja": "▶ プレビュー: *",
+
+    "songfield_required_fields_en": "* Required fields",
+    "songfield_required_fields_es": "* Campos requeridos",
+    "songfield_required_fields_ja": "* 必須フィールド",
+
+    "diff_warn_text_en": "* At least one difficulty must be selected",
+    "diff_warn_text_es": "* Se debe seleccionar al menos una dificultad",
+    "diff_warn_text_ja": "* 少なくとも1つの難易度を選択する必要があります",
+
+    "bpmcalc_bpm_txt_en": "BPM:",
+    "bpmcalc_bpm_txt_es": "BPM:",
+    "bpmcalc_bpm_txt_ja": "BPM:",
+
+    "bpmcalc_acc_txt_en": "Accuracy:",
+    "bpmcalc_acc_txt_es": "Presición:",
+    "bpmcalc_acc_txt_ja": "正確さ:",
+
+    "bpmcalc_taps_txt_en": "Taps:",
+    "bpmcalc_taps_txt_es": "Toques:",
+    "bpmcalc_taps_txt_ja": "タップ:",
+
+    "error_bpmcalc_audio_not_found_en": "Audio file not found. Please ensure PV ID is set and the corresponding .ogg file exists.",
+    "error_bpmcalc_audio_not_found_es": "No se encontró el archivo de audio. Asegúrese de que el ID de PV esté configurado y que exista el archivo .ogg correspondiente.",
+    "error_bpmcalc_audio_not_found_ja": "オーディオファイルが見つかりません。PV IDが設定されており、対応する.oggファイルが存在することを確認してください。",
+
+    "error_performers_more_than_six_en": "Cannot add more than 6 performers",
+    "error_performers_more_than_six_es": "No se puede agregar más de 6 cantantes",
+    "error_performers_more_than_six_ja": "6人以上の出演者を追加することはできません",
+
+    "error_performers_atleast_one_en": "There must be at least 1 performer",
+    "error_performers_atleast_one_es": "Debe haber al menos 1 intérprete",
+    "error_performers_atleast_one_ja": "少なくとも1人の出演者がいなければなりません",
+
+    "warn_var_edit_en": "Select a variant to edit",
+    "warn_var_edit_es": "Seleccione una variante para editar",
+    "warn_var_edit_ja": "編集するバリエーションを選択してください",
+
+    "remove_var_en": "Select a variant to remove",
+    "remove_var_es": "Seleccione una variante para eliminar",
+    "remove_var_ja": "削除するバリアントを選択してください",
+
+    "confirm_removal_var_en": "Are you sure you want to remove this variant?",
+    "confirm_removal_var_es": "¿Estás seguro de que quieres eliminar esta variante?",
+    "confirm_removal_var_ja": "このバリアントを削除してもよろしいですか?",
+
+    "info_bpmcalc_detecting_en": "Detecting...",
+    "info_bpmcalc_detecting_es": "Detectando...",
+    "info_bpmcalc_detecting_ja": "検出...",
+
+    "info_bpmcalc_madmom_missing_1_en": "Madmom library is required for automatic BPM detection.\n",
+    "info_bpmcalc_madmom_missing_1_es": "Se requiere la libreria Madmom para la detección automática de BPM.\n",
+    "info_bpmcalc_madmom_missing_1_ja": "自動 BPM 検出には Madmom ライブラリが必要です。\n",
+
+    "info_bpmcalc_madmom_missing_2_en": "Please make sure you're installing a recent version of the editor.\n",
+    "info_bpmcalc_madmom_missing_2_es": "Por favor asegúrese de haber instalado una versión del editor reciente.\n",
+    "info_bpmcalc_madmom_missing_2_ja": "最新バージョンのエディターがインストールされていることを確認してください。\n",
+
+    "info_bpmcalc_madmom_missing_3_en": "If the issue persists, contact NyxC on Discord.",
+    "info_bpmcalc_madmom_missing_3_es": "Si el problema persiste contacte a NyxC en Discord.",
+    "info_bpmcalc_madmom_missing_3_ja": "問題が解決しない場合は、DiscordでNyxCにお問い合わせください。",
+
+    "error_bpmcalc_beats_undetected_en": "Could not detect beats in the audio file.",
+    "error_bpmcalc_beats_undetected_es": "No se pudieron detectar ritmos en el archivo de audio.",
+    "error_bpmcalc_beats_undetected_ja": "オーディオファイル内のビートを検出できませんでした。",
+
+    "error_bpmcalc_ffmpeg_missing_1_en": "Failed to detect BPM:",
+    "error_bpmcalc_ffmpeg_missing_1_es": "No se pudo detectar el BPM:",
+    "error_bpmcalc_ffmpeg_missing_1_ja": "BPM を検出できませんでした:",
+
+    "error_bpmcalc_ffmpeg_missing_2_en": "Make sure FFmpeg is installed and available in PATH.",
+    "error_bpmcalc_ffmpeg_missing_2_es": "Asegúrese de que FFmpeg esté instalado y disponible en PATH.",
+    "error_bpmcalc_ffmpeg_missing_2_ja": "FFmpeg がインストールされ、PATH で使用可能であることを確認してください。",
+
+    "error_bpmcalc_detection_failed_en": "BPM detection failed:",
+    "error_bpmcalc_detection_failed_es": "Error en la detección de BPM:",
+    "error_bpmcalc_detection_failed_ja": "BPM検出に失敗しました:",
+
+    "button_auto_detect_bpm_en": "Auto Detect BPM",
+    "button_auto_detect_bpm_es": "Auto Detectar BPM",
+    "button_auto_detect_bpm_ja": "BPMを自動検出",
+
+    "bpmcalc_auto_det_txt_en": "Auto-detected",
+    "bpmcalc_auto_det_txt_es": "Auto-detectado",
+    "bpmcalc_auto_det_txt_ja": "自動検出",
+
+    "bpmcalc_auto_txt_en": "Auto",
+    "bpmcalc_auto_txt_es": "Auto",
+    "bpmcalc_auto_txt_ja": "オート",
+
+    "error_bpmcalc_play_audio_en": "Failed to play audio:",
+    "error_bpmcalc_play_audio_es": "No se pudo reproducir el audio:",
+    "error_bpmcalc_play_audio_ja": "オーディオの再生に失敗しました:",
+
+    "bpmcalc_play_song_en": "▶ Play Song",
+    "bpmcalc_play_song_es": "▶ Reproducir canción",
+    "bpmcalc_play_song_ja": "▶ 曲を再生",
+
+    "bpmcalc_stop_song_en": "⏹ Stop*",
+    "bpmcalc_stop_song_es": "⏹ Parar",
+    "bpmcalc_stop_song_ja": "⏹ 停止",
+
+    "bpmcalc_reset_btn_en": "Reset",
+    "bpmcalc_reset_btn_es": "Reiniciar",
+    "bpmcalc_reset_btn_ja": "リセット",
+
+    "bpmcalc_use_bpm_btn_en": "Use BPM",
+    "bpmcalc_use_bpm_btn_es": "Usar BPM",
+    "bpmcalc_use_bpm_btn_ja": "BPMを使用する",
+
+    "bpmcalc_close_btn_en": "Close",
+    "bpmcalc_close_btn_es": "Cerrar",
+    "bpmcalc_close_btn_ja": "近い",
+
+    "info_bpmcalc_tip_en": "Tip: You can also press SPACEBAR to tap",
+    "info_bpmcalc_tip_es": "Consejo: También puedes presionar la BARRA ESPACIADORA para tocar",
+    "info_bpmcalc_tip_ja": "ヒント: スペースバーを押してタップすることもできます",
+
+    "info_state_bpmcalc_playing_en": "Playing",
+    "info_state_bpmcalc_playing_es": "Reproduciendo",
+    "info_state_bpmcalc_playing_ja": "再現",
+
+    "bpmcalc_tap_btn_txt_en": "Tap the button to the beat:",
+    "bpmcalc_tap_btn_txt_es": "Toca el botón al ritmo:",
+    "bpmcalc_tap_btn_txt_ja": "ビートに合わせてボタンをタップします:",
+
+    "bpmcalc_tap_tip_txt_en": "(Use at least 4 taps for better accuracy)",
+    "bpmcalc_tap_tip_txt_es": "(Utilice al menos 4 toques para una mayor precisión)",
+    "bpmcalc_tap_tip_txt_ja": "（精度を上げるには少なくとも 4 回タップしてください）",
+
+    "bpmcalc_TAP_txt_en": "TAP",
+    "bpmcalc_TAP_txt_es": "GOLPECITO (Según el traductor de google)",
+    "bpmcalc_TAP_txt_ja": "タップ",
+
+    "bpmcalc_audio_playback_en": "Audio Playback",
+    "bpmcalc_audio_playback_es": "Reproducir Audio",
+    "bpmcalc_audio_playback_ja": "オーディオ再生",
+
+    "button_accept_en": "Accept",
+    "button_accept_es": "Aceptar",
+    "button_accept_ja": "承認",
+
+    "button_cancel_en": "Cancel",
+    "button_cancel_es": "Cancelar",
+    "button_cancel_ja": "キャンセル",
+
+    "button_add_en": "Add",
+    "button_add_es": "Añadir",
+    "button_add_ja": "追加",
+
+    "button_remove_en": "Remove",
+    "button_remove_es": "Eliminar",
+    "button_remove_ja": "削除",
+
+    "button_preview_en": "Preview",
+    "button_preview_es": "Previsualizar",
+    "button_preview_ja": "プレビュー",
+
+    "button_add_var_en": "Add Variant",
+    "button_add_var_es": "Añadir Variante",
+    "button_add_var_ja": "バリエーションを追加",
+
+    "button_edit_var_en": "Edit Variant",
+    "button_edit_var_es": "Editar Variante",
+    "button_edit_var_ja": "バリエーションを編集",
+
+    "button_remove_var_en": "Remove Variant",
+    "button_remove_var_es": "Remover Variante",
+    "button_remove_var_ja": "除去バリアント",
+
+    "button_load_en": "Load",
+    "button_load_es": "Cargar",
+    "button_load_ja": "読み込む",
+
+    "genhira_success_txt_en": "Hiragana name generated:",
+    "genhira_success_txt_es": "Nombre hiragana generado:",
+    "genhira_success_txt_ja": "ひらがなの名前を生成:",
+
+    "genhira_warn_txt_en": "Please enter an original song name first.",
+    "genhira_warn_txt_es": "Ingrese primero el nombre de una canción original.",
+    "genhira_warn_txt_ja": "まずはオリジナルの曲名を入力してください。",
+
+    "genhira_info_txt_en": "Hiragana name already exists. Clear it first if you want to regenerate.",
+    "genhira_info_txt_es": "El nombre hiragana ya existe. Bórralo primero si quieres regenerarlo.",
+    "genhira_info_txt_ja": "ひらがなの名前が既に存在します。再生成する場合は、まずこれをクリアしてください。",
+
+    "genhira_missinglib_error_1_en": "The pykakasi library is missing, make sure you have installed the latest version of the editor.\n",
+    "genhira_missinglib_error_1_es": "Falta la libreria pykakasi, asegurese de haber instalado la version mas reciente del editor.\n",
+    "genhira_missinglib_error_1_ja": "pykakasi ライブラリが見つかりません。エディターの最新バージョンがインストールされていることを確認してください。\n",
+
+    "genhira_missinglib_error_2_en": "Contact NyxC on Discord if the issue persists.",
+    "genhira_missinglib_error_2_es": "Contacte a NyxC por Discord si el problema persiste.",
+    "genhira_missinglib_error_2_ja": "問題が解決しない場合は、Discord で NyxC に連絡してください。",
+
+    "genhira_failed_gen_hira_err_en": "Failed to generate hiragana name:",
+    "genhira_failed_gen_hira_err_es": "No se pudo generar el nombre hiragana:",
+    "genhira_failed_gen_hira_err_ja": "ひらがなの名前を生成できませんでした:",
+
+    "playpre_invalid_sabi_s_du_err_en": "Invalid sabi start/duration.",
+    "playpre_invalid_sabi_s_du_err_es": "Inicio/duración de sabi no válido.",
+    "playpre_invalid_sabi_s_du_err_ja": "無効なサビの開始/期間です。",
+
+    "playpre_pv_id_undefined_err_en": "PV ID not defined",
+    "playpre_pv_id_undefined_err_es": "PV ID no definido",
+    "playpre_pv_id_undefined_err_ja": "PV IDが定義されていません",
+
+    "playpre_db_path_not_found_err_1_en": "Database path not found.\n",
+    "playpre_db_path_not_found_err_1_es": "Ruta de la base de datos no encontrada.\n",
+    "playpre_db_path_not_found_err_1_ja": "データベースパスが見つかりません。\n",
+
+    "playpre_db_path_not_found_err_2_en": "Parent type:",
+    "playpre_db_path_not_found_err_2_es": "Tipo de pariente:",
+    "playpre_db_path_not_found_err_2_ja": "親タイプ:",
+
+    "playpre_db_path_not_found_err_3_en": "Available parent attributes:",
+    "playpre_db_path_not_found_err_3_es": "Atributos principales disponibles:",
+    "playpre_db_path_not_found_err_3_ja": "利用可能な親属性:",
+
+    "playpre_db_path_not_found_err_4_en": "Has loaded_db_path:",
+    "playpre_db_path_not_found_err_4_es": "Tiene loaded_db_path:",
+    "playpre_db_path_not_found_err_4_ja": "loaded_db_path があります:",
+
+    "playpre_db_path_not_found_err_5_en": "Please load a mod_pv_db.txt file first.",
+    "playpre_db_path_not_found_err_5_es": "Primero cargue un archivo mod_pv_db.txt.",
+    "playpre_db_path_not_found_err_5_ja": "まずmod_pv_db.txtファイルをロードしてください。",
+
+    "playre_db_file_not_found_err_en": "Database file not found:",
+    "playre_db_file_not_found_err_es": "Archivo de base de datos no encontrado:",
+    "playre_db_file_not_found_err_ja": "データベースファイルが見つかりません:",
+
+    "playpre_root_not_found_err_1_en": "Root folder not found:",
+    "playpre_root_not_found_err_1_es": "Carpeta raíz no encontrada:",
+    "playpre_root_not_found_err_1_ja": "ルートフォルダが見つかりません:",
+
+    "playpre_root_not_found_err_2_en": "Database path:",
+    "playpre_root_not_found_err_2_es": "Ruta de la base de datos:",
+    "playpre_root_not_found_err_2_ja": "データベース パス:",
+
+    "playpre_root_not_found_err_3_en": "Root folder:",
+    "playpre_root_not_found_err_3_es": "Carpeta raíz:",
+    "playpre_root_not_found_err_3_ja": "ルートフォルダ:",
+
+    "playpre_audio_file_not_found_err_1_en": "No audio file found for PV ID:",
+    "playpre_audio_file_not_found_err_1_es": "No se encontró ningún archivo de audio para el PV ID:",
+    "playpre_audio_file_not_found_err_1_ja": "PV ID のオーディオファイルが見つかりません:",
+
+    "playpre_audio_file_not_found_err_2_en": "Expected:",
+    "playpre_audio_file_not_found_err_2_es": "Esperado:",
+    "playpre_audio_file_not_found_err_2_ja": "期待される：",
+
+    "playpre_audio_file_not_found_err_3_en": "Avaiable .ogg giles:",
+    "playpre_audio_file_not_found_err_3_es": "Archivos .ogg disponibles:",
+    "playpre_audio_file_not_found_err_3_ja": "利用可能な .ogg ファイル:",
+
+    "playpre_no_ogg_files_err_en": "No .ogg files found in directory tree:",
+    "playpre_no_ogg_files_err_es": "No se encontraron archivos .ogg en el árbol de directorios:",
+    "playpre_no_ogg_files_err_ja": "ディレクトリツリーに .ogg ファイルが見つかりません:",
+
+    "playpre_invalid_time_range_err_en": "Invalid time range for audio fragment",
+    "playpre_invalid_time_range_err_es": "Rango de tiempo inválido para la fragmento de audio",
+    "playpre_invalid_time_range_err_ja": "オーディオフラグメントの時間範囲が無効です",
+
+    "info_error_en": "Error",
+    "info_error_es": "Error",
+    "info_error_ja": "エラー",
+
+    "info_playback_error_en": "Playback error",
+    "info_playback_error_es": "Error de reproducción",
+    "info_playback_error_ja": "再生エラー",
+
+    "info_required_fields_missing_en": "Required Fields Missing",
+    "info_required_fields_missing_es": "Faltan campos obligatorios",
+    "info_required_fields_missing_ja": "必須フィールドが不足しています",
+
+    "info_missing_lib_en": "Missing Library",
+    "info_missing_lib_es": "Libreria Faltante",
+    "info_missing_lib_ja": "ライブラリが見つかりません",
+
+    "info_missing_file_en": "Missing File",
+    "info_missing_file_es": "Archivo Faltante",
+    "info_missing_file_ja": "ファイルが見つかりません",
+
+    "info_detection_error_en": "Detection Error",
+    "info_detection_error_es": "Error de Detección",
+    "info_detection_error_ja": "Error de detección",
+
+    "info_success_en": "Success",
+    "info_success_es": "Éxito",
+    "info_success_ja": "成功",
+
+    "info_warn_en": "Warning",
+    "info_warn_es": "Advertencia",
+    "info_warn_ja": "警告",
+
+    "info_info_en": "Info",
+    "info_info_es": "Info",
+    "info_info_ja": "情報",
+
+    "info_debug_en": "Debug Info",
+    "info_debug_es": "Info Debug",
+    "info_debug_ja": "デバッグ情報",
+
+    "info_audio_file_not_found_en": "Audio file not found",
+    "info_audio_file_not_found_es": "Archivo de audio no encontrado",
+    "info_audio_file_not_found_ja": "音声ファイルが見つかりません",
+
+    "info_no_audio_files_en": "No audio files",
+    "info_no_audio_files_es": "No hay archivos de audio",
+    "info_no_audio_files_ja": "音声ファイルはありません",
+
+    "info_remove_en": "Remove",
+    "info_remove_es": "Remover",
+    "info_remove_ja": "取り除く",
+
+    "info_confirm_en": "Confirm",
+    "info_confirm_es": "Confirmar",
+    "info_confirm_ja": "確認する",
+
+    "info_all_folders_exist_en": "All Folders Exist",
+    "info_all_folders_exist_es": "Todas las carpetas existen",
+    "info_all_folders_exist_ja": "すべてのフォルダが存在します",
+
+    "info_theme_err_en": "Theme Error",
+    "info_theme_err_es": "Error de Tema",
+    "info_theme_err_ja": "テーマエラー",
+
+    "info_no_songs_en": "No songs",
+    "info_no_songs_es": "No hay canciones",
+    "info_no_songs_ja": "歌はありません",
+
+    "info_validation_en": "Validation",
+    "info_validation_es": "Validación",
+    "info_validation_ja": "検証",
+
+    "info_validation_errs_en": "Validation Errors",
+    "info_validation_errs_es": "Errores de validación",
+    "info_validation_errs_ja": "検証エラー",
+
+    "info_import_options_en": "Import Options",
+    "info_import_options_es": "Opciones de importación",
+    "info_import_options_ja": "インポートオプション",
+
+    "info_migration_complete_en": "Migration Complete",
+    "info_migration_complete_es": "Migración completada",
+    "info_migration_complete_ja": "移行完了",
+
+    "info_migration_error_en": "Migration Error",
+    "info_migration_error_es": "Error de migración",
+    "info_migration_error_ja": "移行エラー",
+
+    "info_information_en": "Information",
+    "info_information_es": "Información",
+    "info_information_ja": "情報",
+
+    "info_unsupported_file_en": "Unsupported File Type",
+    "info_unsupported_file_es": "Tipo de archivo no compatible",
+    "info_unsupported_file_ja": "サポートされていないファイルタイプ",
+
+    "info_file_loaded_en": "File Loaded Successfully",
+    "info_file_loaded_es": "Archivo cargado exitosamente",
+    "info_file_loaded_ja": "ファイルが正常に読み込まれました",
+
+    "info_process_err_en": "Processing Error",
+    "info_process_err_es": "Error de procesamiento",
+    "info_process_err_ja": "処理エラー",
+
+    "info_load_config_en": "Load Configuration",
+    "info_load_config_es": "Cargar configuración",
+    "info_load_config_ja": "設定読み込み",
+
+    "info_load_db_en": "Import Database File",
+    "info_load_db_es": "Importar archivo de base de datos",
+    "info_load_db_ja": "データベースファイルのインポート",
+
+    "info_connection_error_en": "Connection Error",
+    "info_connection_error_es": "Error de conexión",
+    "info_connection_error_ja": "接続エラー",
+
+    "info_pv_id_already_used_en": "PV ID Already Used",
+    "info_pv_id_already_used_es": "PV ID ya utilizado",
+    "info_pv_id_already_used_ja": "PV IDは既に使用されています",
+
+    "info_pv_id_reserved_en": "PV ID Reserved",
+    "info_pv_id_reserved_es": "PV ID Reservado",
+    "info_pv_id_reserved_ja": "PV ID 予約済み",
+
+    "info_language_changed_en": "Language Changed",
+    "info_language_changed_es": "Idioma cambiado",
+    "info_language_changed_ja": "言語が変更されました",
+
+    "info_language_error_en": "Language Error",
+    "info_language_error_es": "言語エラー",
+    "info_language_error_ja": "言語エラー",
+
+    "accept_err_1_en": "PV ID is required",
+    "accept_err_1_es": "El PV ID es requerido",
+    "accept_err_1_ja": "PV IDが必要です",
+
+    "accept_err_2_en": "PV ID must be between 001 and 4294967295",
+    "accept_err_2_es": "El PV ID debe estar entre 001 y 4294967295",
+    "accept_err_2_ja": "PV IDは001～4294967295の範囲でなければなりません",
+
+    "accept_err_3_en": "PV ID must be a valid number",
+    "accept_err_3_es": "El PV ID debe ser un número valido",
+    "accept_err_3_ja": "PV IDは有効な番号である必要があります",
+
+    "accept_err_4_en": "Original name is required",
+    "accept_err_4_es": "El nombre original es requerido",
+    "accept_err_4_ja": "元の名前が必要です",
+
+    "accept_err_5_en": "English name is required",
+    "accept_err_5_es": "El nombre en Inglés es requerido",
+    "accept_err_5_ja": "英語名が必要です",
+
+    "accept_err_6_en": "Hiragana name is required",
+    "accept_err_6_es": "El nombre en Hiragana es requerido",
+    "accept_err_6_ja": "ひらがなの名前は必須です",
+
+    "accept_err_7_en": "Hiragana name must only contain Hiragana characters and allowed punctuation",
+    "accept_err_7_es": "El nombre Hiragana solo debe contener caracteres Hiragana y puntuación permitida",
+    "accept_err_7_ja": "ひらがなの名前には、ひらがなと使用可能な句読点のみを含めることができます。",
+
+    "accept_err_8_en": "BPM is required",
+    "accept_err_8_es": "El BPM es requerido",
+    "accept_err_8_ja": "BPMが必要です",
+
+    "accept_err_9_en": "BPM must be a positive number",
+    "accept_err_9_es": "El BPM debe ser un número positivo",
+    "accept_err_9_ja": "BPMは正の数でなければなりません",
+
+    "accept_err_10_en": "BPM must be a valid number (e.g., 120 or 132.5)",
+    "accept_err_10_es": "BPM debe ser un número válido (por ejemplo, 120 o 132,5)",
+    "accept_err_10_ja": "BPMは有効な数値である必要があります（例：120または132.5）",
+
+    "accept_err_11_en": "At least one difficulty must be selected",
+    "accept_err_11_es": "Se debe seleccionar al menos una dificultad",
+    "accept_err_11_ja": "少なくとも1つの難易度を選択する必要があります",
+
+    "accept_err_12_en": "There must be at least 1 performer",
+    "accept_err_12_es": "Debe haber al menos 1 intérprete",
+    "accept_err_12_ja": "少なくとも1人の出演者がいなければなりません",
+
+    "accept_err_13_en": "Cannot have more than 6 performers",
+    "accept_err_13_es": "No puede haber más de 6 intérpretes",
+    "accept_err_13_ja": "出演者は6人まで",
+
+    "accept_err_14_en": "At least one field in Original section must be completed",
+    "accept_err_14_es": "Se debe completar al menos un campo en la sección Original",
+    "accept_err_14_ja": "オリジナルセクションの少なくとも1つのフィールドを入力する必要があります",
+
+    "accept_err_15_en": "At least one field in English section must be completed",
+    "accept_err_15_es": "Se debe completar al menos un campo en la sección de inglés.",
+    "accept_err_15_ja": "英語セクションの少なくとも1つのフィールドを入力する必要があります",
+
+    "accept_err_16_en": "Easy difficulty level must be selected",
+    "accept_err_16_es": "Se debe seleccionar el nivel de dificultad fácil",
+    "accept_err_16_ja": "簡単な難易度を選択する必要があります",
+
+    "accept_err_17_en": "Normal difficulty level must be selected",
+    "accept_err_17_es": "Se debe seleccionar el nivel de dificultad normal",
+    "accept_err_17_ja": "通常の難易度を選択してください",
+
+    "accept_err_18_en": "Hard difficulty level must be selected",
+    "accept_err_18_es": "Se debe seleccionar el nivel de dificultad difícil",
+    "accept_err_18_ja": "難しい難易度を選択する必要があります",
+
+    "accept_err_19_en": "Extreme difficulty level must be selected",
+    "accept_err_19_es": "Se debe seleccionar el nivel de dificultad extremo",
+    "accept_err_19_ja": "難易度は「極限」を選択してください",
+
+    "accept_err_20_en": "Extra Extreme difficulty level must be selected",
+    "accept_err_20_es": "Se debe seleccionar el nivel de dificultad extra extremo",
+    "accept_err_20_ja": "難易度「Extra Extreme」を選択する必要があります",
+
+    "pv_id_extension_en": "",
+    "pv_id_extension_es": "El ",
+    "pv_id_extension_ja": "",
+
+    "pv_id_used_en": "is already used by another song.",
+    "pv_id_used_es": "ya está siendo utilizado por otra canción.",
+    "pv_id_used_ja": "は既に別の曲で使用されています。",
+
+    "could_not_check_used_en": "Could not check used PV IDs database:",
+    "could_not_check_used_es": "No se pudo verificar la base de datos de identificaciones de PV utilizadas:",
+    "could_not_check_used_ja": "使用済みの PV ID データベースを確認できませんでした:",
+
+    "pv_id_reserved_en": "is reserved and cannot be used.",
+    "pv_id_reserved_es": "está reservado y no se puede utilizar.",
+    "pv_id_reserved_ja": "は予約済みなので使用できません。",
+
+    "could_not_check_reserved_en": "Could not check reserved PV IDs database:",
+    "could_not_check_reserved_es": "No se pudo verificar la base de datos de ID de PV reservados:",
+    "could_not_check_reserved_ja": "予約済みの PV ID データベースを確認できませんでした:",
+
+    "pv_id_available_en": "is available for use.",
+    "pv_id_available_es": "está disponible para su uso.",
+    "pv_id_available_ja": "は使用可能です。",
+
+    "err_invalid_pv_id_format_en": "Invalid PV ID format:",
+    "err_invalid_pv_id_format_es": "Formato del PV ID no válido:",
+    "err_invalid_pv_id_format_ja": "無効なPV ID形式:",
+
+    "err_checking_availability_en": "Error checking PV ID availability:",
+    "err_checking_availability_es": "Error al comprobar la disponibilidad del PV ID:",
+    "err_checking_availability_ja": "PV ID の可用性を確認中にエラーが発生しました:",
+
+    "pv_id_used_txt_en": "Do you want to continue anyway?\n\nYes: Continue (not recommended)\nNo: Go back and change PV ID",
+    "pv_id_used_txt_es": "¿Quieres continuar de todos modos?\n\nSí: Continuar (no recomendado)\nNo: Regresar y cambiar el PV ID",
+    "pv_id_used_txt_ja": "それでも続行しますか?\n\nはい: 続行します (推奨されません)\nいいえ: 戻って PV ID を変更します",
+
+    "pv_id_reserved_txt_en": "Do you want to continue anyway?\n\nYes = Continue (not recommended)\nNo = Go back and change PV ID",
+    "pv_id_reserved_txt_es": "¿Desea continuar de todos modos?\n\nSí = Continuar (no recomendado)\nNo = Regresar y cambiar el PV ID",
+    "pv_id_reserved_txt_ja": "それでも続行しますか?\n\nはい = 続行 (非推奨)\nいいえ = 戻って PV ID を変更します",
+
+    "pv_id_connection_err_en": "Do you want to continue anyway? (Not recommended)\n\nYes: Continue\nNo: Go back and change PV ID\nCancel: Cancel operation",
+    "pv_id_connection_err_es": "¿Desea continuar de todos modos? (No recomendado)\nSí: Continuar\nNo: Volver y cambiar el PV ID\nCancelar Cancelar operación",
+    "pv_id_connection_err_ja": "それでも続行しますか? (非推奨)\n\nはい: 続行\nいいえ: 戻って PV ID を変更します\nキャンセル: 操作をキャンセルします",
+
+    "dialog_title_configure_song_en": "Configure Song",
+    "dialog_title_configure_song_es": "Configurar Canción",
+    "dialog_title_configure_song_ja": "楽曲を設定",
+    
+    "dialog_title_configure_audio_variant_en": "Configure Audio Variant",
+    "dialog_title_configure_audio_variant_es": "Configurar Variante de Audio",
+    "dialog_title_configure_audio_variant_ja": "オーディオバリアントの設定",
+
+    "dialog_title_basic_information_en": "Basic Information",
+    "dialog_title_basic_information_es": "Información Básica",
+    "dialog_title_basic_information_ja": "基本情報",
+
+    "dialog_title_difficulties_en": "Difficulties",
+    "dialog_title_difficulties_es": "Dificultades",
+    "dialog_title_difficulties_ja": "困難",
+
+    "dialog_title_performers_en": "Performers",
+    "dialog_title_performers_es": "Personajes",
+    "dialog_title_performers_ja": "出演者",
+
+    "dialog_title_song_info_en": "Song Information",
+    "dialog_title_song_info_es": "Información de la canción",
+    "dialog_title_song_info_ja": "曲情報",
+
+    "dialog_title_audio_variants_en": "Audio Variants",
+    "dialog_title_audio_variants_es": "Variantes de Audio",
+    "dialog_title_audio_variants_ja": "オーディオバリアント",
+
+    "dialog_title_processing_en": "Processing...",
+    "dialog_title_processing_es": "Procesando...",
+    "dialog_title_processing_ja": "処理中...",
+
+    "varframe_config_audio_vars_en": "Configured audio variants:",
+    "varframe_config_audio_vars_es": "Variantes de audio configuradas:",
+    "varframe_config_audio_vars_ja": "設定されたオーディオバリアント:",
+
+    "dialog_title_bpm_calc_en": "BPM Calculator",
+    "dialog_title_bpm_calc_es": "Calculadora de BPM",
+    "dialog_title_bpm_calc_ja": "BPM計算機:",
+
+    "dialog_title_missing_media_en": "Missing Media Files",
+    "dialog_title_missing_media_es": "Archivos multimedia faltantes",
+    "dialog_title_missing_media_ja": "見つからないメディアファイル",
+
+    "dialog_title_autosave_en": "Select encrypted autosave file:",
+    "dialog_title_autosave_es": "Seleccionar archivo de guardado automático cifrado:",
+    "dialog_title_autosave_ja": "暗号化された自動保存ファイルを選択:",
+
+    "songfield_pv_id_en": "PV ID: *",
+    "songfield_pv_id_es": "PV ID: *",
+    "songfield_pv_id_ja": "PV ID: *",
+
+    "lyrics_synced_en": "Lyrics synced",
+    "lyrics_synced_es": "Líneas sincronizadas",
+    "lyrics_synced_ja": "歌詞が同期されました",
+
+    "or_en": "OR",
+    "or_es": "O",
+    "or_ja": "または",
+
+    "song_en": "Song",
+    "song_es": "Canción",
+    "song_ja": "[歌]    ",
+
+    "video_en": "Movie",
+    "video_es": "Video",
+    "video_ja": "[映画] ",
+
+    "dialog_title_lyrics_en": "Lyrics",
+    "dialog_title_lyrics_es": "Letras",
+    "dialog_title_lyrics_ja": "歌詞",
+  
+    "button_clear_en": "Clear",
+    "button_clear_es": "Borrar",
+    "button_clear_ja": "消去",
+  
+    "button_sync_lines_en": "Sync Lines",
+    "button_sync_lines_es": "Sincronizar líneas",
+    "button_sync_lines_ja": "行を同期",
+  
+    "lyrics_japanese_en": "Japanese Lyrics",
+    "lyrics_japanese_es": "Letras en japonés",
+    "lyrics_japanese_ja": "日本語歌詞",
+  
+    "lyrics_english_en": "English Lyrics",
+    "lyrics_english_es": "Letras en inglés",
+    "lyrics_english_ja": "英語歌詞",
+
+    "sfx_tab_title_en": "SFX",
+    "sfx_tab_title_es": "SFX",
+    "sfx_tab_title_ja": "SE",
+  
+    "variant_mode_label_en": "Variant mode:",
+    "variant_mode_label_es": "Modo de variante:",
+    "variant_mode_label_ja": "バリアントモード：",
+  
+    "variant_mode_displayname_en": "Display name",
+    "variant_mode_displayname_es": "Nombre mostrado",
+    "variant_mode_displayname_ja": "表示名",
+  
+    "variant_mode_performer_en": "Performer (single)",
+    "variant_mode_performer_es": "Intérprete (único)",
+    "variant_mode_performer_ja": "パフォーマー（単独）",
+  
+    "variant_display_name_label_en": "Display name:",
+    "variant_display_name_label_es": "Nombre mostrado:",
+    "variant_display_name_label_ja": "表示名：",
+  
+    "variant_display_name_en_label_en": "Display name (EN):",
+    "variant_display_name_en_label_es": "Nombre mostrado (EN):",
+    "variant_display_name_en_label_ja": "表示名（英語）：",
+  
+    "variant_performer_label_en": "Performer:",
+    "variant_performer_label_es": "Intérprete:",
+    "variant_performer_label_ja": "パフォーマー：",
+
+    "enable_pvid_validation_en": "Enable PV ID Validation",
+    "enable_pvid_validation_es": "Habilitar Validación de PV ID",
+    "enable_pvid_validation_ja": "PV ID検証を有効化",
+	
+    "enabled_en": "Enabled",
+    "enabled_es": "Habilitado",
+    "enabled_ja": "有効",
+
+	"disabled_en": "Disabled",
+	"disabled_es": "Deshabilitado",
+	"disabled_ja": "無効",
+
+    "info_pvid_validation_en": "PV ID Validation",
+    "info_pvid_validation_es": "Validación de PV ID",
+    "info_pvid_validation_ja": "PV ID検証",
+
+    "pvid_validation_status_en": "PV ID validation status",
+    "pvid_validation_status_es": "Estado de validación de PV ID",
+    "pvid_validation_status_ja": "PV ID検証ステータス",
+
+    "pvid_validation_note_en": "When disabled, PV IDs will not be checked against the online database.\nThis improves performance during testing but may result in ID conflicts.",
+    "pvid_validation_note_es": "Cuando está deshabilitado, los PV IDs no se verificarán contra la base de datos en línea.\nEsto mejora el rendimiento durante las pruebas pero puede resultar en conflictos de ID.",
+    "pvid_validation_note_ja": "無効にすると、PV IDはオンラインデータベースと照合されません。\nテスト中のパフォーマンスは向上しますが、ID競合が発生する可能性があります。",
+
+    "pvid_validation_active_en": "Checking IDs online (slower)",
+    "pvid_validation_active_es": "Verificando IDs en línea (más lento)",
+    "pvid_validation_active_ja": "IDをオンラインで確認中（遅い）",
+
+    "pvid_validation_inactive_en": "Fast mode (no ID checking)",
+    "pvid_validation_inactive_es": "Modo rápido (sin verificación de ID)",
+    "pvid_validation_inactive_ja": "高速モード（ID確認なし）",
+
+    "full_song_list_en": "Full Song List",
+    "full_song_list_es": "Lista Completa de Canciones",
+    "full_song_list_ja": "全曲リスト",
+
+    "scanning_mods_en": "Scanning installed mods...",
+    "scanning_mods_es": "Escaneando mods instalados...",
+    "scanning_mods_ja": "インストール済みMODをスキャン中...",
+
+    "steam_mods_not_found_en": "Steam mods folder not found at:",
+    "steam_mods_not_found_es": "Carpeta de mods de Steam no encontrada en:",
+    "steam_mods_not_found_ja": "SteamのMODフォルダが見つかりません:",
+
+    "installed_mods_list_en": "Installed Mods - Full Song List",
+    "installed_mods_list_es": "Mods Instalados - Lista Completa de Canciones",
+    "installed_mods_list_ja": "インストール済みMOD - 全曲リスト",
+
+    "installed_mods_title_en": "Your Installed Project DIVA Mods",
+    "installed_mods_title_es": "Tus Mods de Project DIVA Instalados",
+    "installed_mods_title_ja": "インストール済みProject DIVA MOD",
+
+    "total_mods_en": "Total Mods",
+    "total_mods_es": "Mods Totales",
+    "total_mods_ja": "合計MOD数",
+
+    "total_songs_en": "Total Songs",
+    "total_songs_es": "Canciones Totales",
+    "total_songs_ja": "合計曲数",
+
+    "mods_list_en": "Mods",
+    "mods_list_es": "Mods",
+    "mods_list_ja": "MOD一覧",
+
+    "mod_name_en": "Mod Name",
+    "mod_name_es": "Nombre del Mod",
+    "mod_name_ja": "MOD名",
+
+    "songs_count_en": "Songs",
+    "songs_count_es": "Canciones",
+    "songs_count_ja": "曲数",
+
+    "songs_in_mod_en": "Songs in Selected Mod",
+    "songs_in_mod_es": "Canciones en el Mod Seleccionado",
+    "songs_in_mod_ja": "選択されたMODの曲",
+
+    "song_details_en": "Song Details",
+    "song_details_es": "Detalles de la Canción",
+    "song_details_ja": "曲の詳細",
+
+    "from_mod_en": "From mod",
+    "from_mod_es": "Del mod",
+    "from_mod_ja": "MODから",
+
+    "no_difficulties_en": "No difficulties configured",
+    "no_difficulties_es": "Sin dificultades configuradas",
+    "no_difficulties_ja": "難易度が設定されていません",
+
+    "no_performers_en": "No performers configured",
+    "no_performers_es": "Sin intérpretes configurados",
+    "no_performers_ja": "パフォーマーが設定されていません",
+
+    "no_songinfo_en": "No song information available",
+    "no_songinfo_es": "Información de canción no disponible",
+    "no_songinfo_ja": "曲情報がありません",
+
+    "no_variants_en": "No audio variants",
+    "no_variants_es": "Sin variantes de audio",
+    "no_variants_ja": "オーディオバリアントなし",
+
+    "more_lines_en": "more lines",
+    "more_lines_es": "líneas más",
+    "more_lines_ja": "行以上",
+
+    "add_to_project_en": "Add to Project",
+    "add_to_project_es": "Agregar al Proyecto",
+    "add_to_project_ja": "プロジェクトに追加",
+
+    "song_added_to_project_en": "Song added to current project",
+    "song_added_to_project_es": "Canción agregada al proyecto actual",
+    "song_added_to_project_ja": "現在のプロジェクトに曲を追加しました",
+
+    "select_mod_to_export_en": "Please select a mod to export",
+    "select_mod_to_export_es": "Por favor selecciona un mod para exportar",
+    "select_mod_to_export_ja": "エクスポートするMODを選択してください",
+
+    "export_to_project_en": "Export Selected Mod",
+    "export_to_project_es": "Exportar Mod Seleccionado",
+    "export_to_project_ja": "選択したMODをエクスポート",
+
+    "info_confirm_export_en": "Confirm Export",
+    "info_confirm_export_es": "Confirmar Exportación",
+    "info_confirm_export_ja": "エクスポートの確認",
+
+    "export_songs_from_en": "Export all songs from",
+    "export_songs_from_es": "Exportar todas las canciones de",
+    "export_songs_from_ja": "すべての曲をエクスポート:",
+
+    "add_to_current_project_en": "Add all songs to current project?",
+    "add_to_current_project_es": "¿Agregar todas las canciones al proyecto actual?",
+    "add_to_current_project_ja": "すべての曲を現在のプロジェクトに追加しますか?",
+
+    "added_songs_en": "Added songs",
+    "added_songs_es": "Canciones agregadas",
+    "added_songs_ja": "曲を追加しました",
+
+    "no_mods_with_songs_found_en": "No mods with songs were found in the mods folder",
+    "no_mods_with_songs_found_es": "No se encontraron mods con canciones en la carpeta de mods",
+    "no_mods_with_songs_found_ja": "MODフォルダに曲を含むMODが見つかりませんでした",
+
+    "info_no_mods_en": "No Mods Found",
+    "info_no_mods_es": "No se Encontraron Mods",
+    "info_no_mods_ja": "MODが見つかりません",
+
+    "error_scanning_mods_en": "Error scanning mods",
+    "error_scanning_mods_es": "Error al escanear mods",
+    "error_scanning_mods_ja": "MODのスキャン中にエラーが発生しました",
+
+    "basic_information_en": "Basic Information",
+    "basic_information_es": "Información Básica",
+    "basic_information_ja": "基本情報",
+
+    "song_name_en": "Song Name",
+    "song_name_es": "Nombre de la Canción",
+    "song_name_ja": "曲名",
+
+    "song_name_en_en": "English Song Name",
+    "song_name_en_es": "Nombre de la Canción en Inglés",
+    "song_name_en_ja": "英語の曲名",
+
+    "song_name_reading_en": "Song Name Reading (Hiragana)",
+    "song_name_reading_es": "Lectura del Nombre de la Canción (Hiragana)",
+    "song_name_reading_ja": "曲名読み（ひらがな）",
+
+    "bpm_en": "BPM",
+    "bpm_es": "BPM",
+    "bpm_ja": "BPM",
+
+    "date_en": "Date",
+    "date_es": "Fecha",
+    "date_ja": "日付",
+
+    "sabi_start_en": "Sabi Start Time",
+    "sabi_start_es": "Tiempo de Inicio del Sabi",
+    "sabi_start_ja": "サビ開始時間",
+
+    "sabi_play_en": "Sabi Duration",
+    "sabi_play_es": "Duración del Sabi",
+    "sabi_play_ja": "サビ期間",
+
+    "difficulties_en": "Difficulties",
+    "difficulties_es": "Dificultades",
+    "difficulties_ja": "難易度",
+
+    "diff_extreme_en": "Extreme",
+    "diff_extreme_es": "Extremo",
+    "diff_extreme_ja": "エクストリーム",
+
+    "diff_extreme_extra_en": "Extra Extreme",
+    "diff_extreme_extra_es": "Extra Extremo",
+    "diff_extreme_extra_ja": "エクストラエクストリーム",
+
+    "performers_en": "Performers",
+    "performers_es": "Intérpretes",
+    "performers_ja": "出演者",
+
+    "song_info_en": "Song Information",
+    "song_info_es": "Información de la Canción",
+    "song_info_ja": "曲情報",
+
+    "songinfo_lyrics_en": "Lyricist",
+    "songinfo_lyrics_es": "Letrista",
+    "songinfo_lyrics_ja": "作詞家",
+
+    "songinfo_music_en": "Composer/Artist",
+    "songinfo_music_es": "Compositor/Artista",
+    "songinfo_music_ja": "作曲家/アーティスト",
+
+    "audio_variants_en": "Audio Variants",
+    "audio_variants_es": "Variantes de Audio",
+    "audio_variants_ja": "オーディオバリアント",
+
+    "variant_en": "Variant",
+    "variant_es": "Variante",
+    "variant_ja": "バリアント",
+
+    "vocal_disp_en": "Vocal Display Name",
+    "vocal_disp_es": "Nombre de Vocal Mostrado",
+    "vocal_disp_ja": "ボーカル表示名",
+
+    "lyrics_en": "Lyrics",
+    "lyrics_es": "Letras",
+    "lyrics_ja": "歌詞",
+
+    "button_close_en": "Close",
+    "button_close_es": "Cerrar",
+    "button_close_ja": "閉じる",
+
+    "by_user_en": "by user",
+    "by_user_es": "por usuario",
+    "by_user_ja": "ユーザーによる",
+
+    "reserved_by_en": "Reserved by",
+    "reserved_by_es": "Reservado por",
+    "reserved_by_ja": "予約者",
+
+    "pv_id_is_used_en": "is already used",
+    "pv_id_is_used_es": "ya está en uso",
+    "pv_id_is_used_ja": "は既に使用されています",
+
+    "pv_id_is_reserved_en": "is reserved",
+    "pv_id_is_reserved_es": "está reservado",
+    "pv_id_is_reserved_ja": "は予約済みです",
+
+    "pv_id_fetch_failed_en": "Failed to fetch PV ID database",
+    "pv_id_fetch_failed_es": "No se pudo obtener la base de datos de PV ID",
+    "pv_id_fetch_failed_ja": "PV IDデータベースの取得に失敗しました",
+
+    "error_file_load_en": "Could not load file",
+    "error_file_load_es": "No se pudo cargar el archivo",
+    "error_file_load_ja": "ファイルを読み込めませんでした",
+
+    "filter_text_file_en": "Text file",
+    "filter_text_file_es": "Archivo de texto",
+    "filter_text_file_ja": "テキストファイル",
+
+    "filter_all_files_en": "All files",
+    "filter_all_files_es": "Todos los archivos",
+    "filter_all_files_ja": "すべてのファイル",
+
+    "sfx_button_label_en": "Button",
+    "sfx_button_label_es": "Botón",
+    "sfx_button_label_ja": "ボタン",
+
+    "sfx_slide_label_en": "Slider",
+    "sfx_slide_label_es": "Slider",
+    "sfx_slide_label_ja": "スライダー",
+
+    "sfx_chain_slide_label_en": "Chain Slider",
+    "sfx_chain_slide_label_es": "Cadena de Slider",
+    "sfx_chain_slide_label_ja": "チェーンスライダー",
+
+    "sfx_slider_touch_label_en": "Slider Touch",
+    "sfx_slider_touch_label_es": "Toque de Slider",
+    "sfx_slider_touch_label_ja": "スライダータッチ",
+
+    "sfx_chance_label_en": "Chance Success",
+    "sfx_chance_label_es": "Éxito de Chance",
+    "sfx_chance_label_ja": "チャンス成功",
+
+    "sfx_chance_enable_checkbox_en": "Enable Chance Success SFX",
+    "sfx_chance_enable_checkbox_es": "Activar efectos de sonido de éxito de Chance",
+    "sfx_chance_enable_checkbox_ja": "チャンス成功SEを有効にする",
+
+    "vanilla_included_in_mods_not_counted_en": "vanilla songs included in mods were not counted",
+    "vanilla_included_in_mods_not_counted_es": "canciones vanilla incluidas en mods no fueron contadas",
+    "vanilla_included_in_mods_not_counted_ja": "MODに含まれるバニラ楽曲はカウントされません",
+
+    "search_txt_en": "Search",
+    "search_txt_es": "Buscar",
+    "search_txt_ja": "検索",
+
+    "search_placeholder_en": "Search by ID, name, etc.",
+    "search_placeholder_es": "Buscar por ID, nombre, etc.",
+    "search_placeholder_ja": "ID・名前などで検索",
+
+    "show_vanilla_excluded_en": "Show vanilla excluded",
+    "show_vanilla_excluded_es": "Mostrar canciones vanilla excluidas",
+    "show_vanilla_excluded_ja": "除外されたバニラ楽曲を表示",
+
+    "all_mods_combined_en": "All mods combined",
+    "all_mods_combined_es": "Todos los mods combinados",
+    "all_mods_combined_ja": "すべてのMODを結合",
+
+    "vanilla_embedded_en": "Hatsune Miku: Project Diva Mega Mix+",
+    "vanilla_embedded_es": "Hatsune Miku: Project Diva Mega Mix+",
+    "vanilla_embedded_ja": "初音ミク Project DIVA MEGA39's+",
+
+    "count_including_vanilla_en": "vanilla songs included",
+    "count_including_vanilla_es": "canciones vanilla incluidas",
+    "count_including_vanilla_ja": "バニラ楽曲を含む",
+
+    "filter_pdpack_en": "PD Pack file",
+    "filter_pdpack_es": "Archivo PD Pack",
+    "filter_pdpack_ja": "PD Packファイル",
+
+    "feature_pending_next_phase_en": "This feature is planned for a future update.",
+    "feature_pending_next_phase_es": "Esta función está planeada para una futura actualización.",
+    "feature_pending_next_phase_ja": "この機能は今後のアップデートで実装予定です。",
+
+    "feature_not_yet_connected_en": "This feature is not yet connected to the appropriate service. It is currently under development and will be available in the final release.",
+    "feature_not_yet_connected_es": "Esta función aún no está conectada al servicio correspondiente. Actualmente se encuentra en desarrollo y estará disponible en la versión final.",
+    "feature_not_yet_connected_ja": "この機能はまだ対応するサービスに接続されていません。現在開発中であり、正式版で利用可能になる予定です。",
+
+    "menu_tools_file_association_en": "File Association...",
+    "menu_tools_file_association_es": "Asociación de archivos...",
+    "menu_tools_file_association_ja": "ファイルの関連付け..."
+}
