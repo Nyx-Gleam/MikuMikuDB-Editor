@@ -1,45 +1,50 @@
 """
 standalone_scripts/pdpack_decryptor_tool.py
 ==============================================
-Herramienta de diagnóstico standalone: abre un .pdpack (o un archivo de
-caché de pv_ids_manager: .pvdb/.frag/.index) y muestra su contenido
-decodificado como árbol explorable o como JSON plano.
+Standalone diagnostic tool: opens a .pdpack file (or a pv_ids_manager
+cache file: .pvdb/.frag/.index) and displays its decoded contents either
+as an interactive tree view or as plain JSON.
 
-*** Por qué se reescribió ***
-La versión original importaba las clases de encriptación DIRECTO del
-`Editor.py` monolítico (`from Editor import CustomEncryptionV1...`) y de
-un `encryption_v4.py` suelto -- dos copias separadas de la misma lógica
-que ya viven, corregidas y probadas, en `core/encryption.py` desde la
-Fase 1 de esta migración (incluye el fix del bug de V3 que hacía
-imposible abrir esos archivos). Mantener una tercera copia aparte
-hubiera significado que esta herramienta se desincronizara de la lógica
-real tarde o temprano -- exactamente el tipo de problema que
-resolvimos varias veces durante la migración. Ahora importa directo de
-`core.encryption` / `core.pv_ids_manager`, así que cualquier fix futuro
-ahí se refleja aquí automáticamente, sin mantener una copia aparte.
+*** Why it was rewritten ***
+The original version imported the encryption classes DIRECTLY from the
+monolithic `Editor.py` (`from Editor import CustomEncryptionV1...`) and
+from a separate `encryption_v4.py` file—two independent copies of the
+same logic that already exist, have been fixed, and thoroughly tested in
+`core/encryption.py` since Phase 1 of this migration (including the V3
+bug fix that previously made those files impossible to open).
 
-También se quitó `ttkbootstrap` (ya no es una dependencia del proyecto)
--- usa `tkinter.ttk` normal. El resto del proyecto ya migró a PySide6,
-pero esta herramienta se deja en Tkinter a propósito: es un diagnóstico
-standalone de un solo archivo, y así no depende de tener PySide6
-instalado para usarla.
+Keeping a third copy would eventually cause this tool to fall out of sync
+with the actual encryption logic—exactly the type of problem that was
+resolved multiple times during the migration. It now imports directly
+from `core.encryption` / `core.pv_ids_manager`, so any future fixes made
+there will automatically apply here without maintaining another copy.
 
-*** Código muerto del original que NO se portó ***
-- Las funciones sueltas `populate_tree`/`show_as_tree`/`show_as_text`/
-  `display_decrypted_result` a nivel de módulo: nunca se llamaban desde
-  ningún lado -- `DecryptorApp.open_file()` usa sus propios métodos
-  (`show_json`/`show_as_text` de la clase), no estas funciones.
-- `DecryptorApp.clear_output`/`append_text`: referencian
-  `self.output_text`, que nunca se crea en `__init__` (solo se crean
-  `self.tree`/`self.text_widget`). Habrían lanzado `AttributeError` si
-  algo las hubiera llamado -- nada las llama.
+`ttkbootstrap` was also removed (it is no longer a project dependency)
+and replaced with the standard `tkinter.ttk`.
 
-*** Detección de formato ***
-La lógica de `detect_encryptor` vive en `core/diagnostic_decoder.py` (no
-aquí) a propósito: así es lógica pura, testeable sin necesitar tkinter
-instalado. Este archivo solo la importa y construye la UI alrededor.
+The rest of the project has already migrated to PySide6, but this tool
+intentionally remains on Tkinter because it is a standalone diagnostic
+utility contained in a single file, allowing it to run without requiring
+PySide6 to be installed.
 
-Uso:
+*** Dead code from the original that was NOT ported ***
+- The standalone module-level functions
+  `populate_tree` / `show_as_tree` / `show_as_text` /
+  `display_decrypted_result`: they were never called from anywhere.
+  `DecryptorApp.open_file()` uses its own class methods
+  (`show_json` / `show_as_text`) instead.
+- `DecryptorApp.clear_output` / `append_text`: these referenced
+  `self.output_text`, which was never created in `__init__`
+  (only `self.tree` and `self.text_widget` exist). They would have raised
+  `AttributeError` if called—but nothing ever called them.
+
+*** Format detection ***
+The `detect_encryptor` logic lives in `core/diagnostic_decoder.py`
+instead of this file on purpose. This keeps it as pure, testable logic
+that does not require tkinter to be installed. This file simply imports
+it and builds the UI around it.
+
+Usage:
     python standalone_scripts/pdpack_decryptor_tool.py
 """
 from __future__ import annotations
@@ -64,7 +69,7 @@ class DecryptorApp:
         frame = ttk.Frame(root, padding=10)
         frame.pack(fill="both", expand=True)
 
-        self.btn_open = ttk.Button(frame, text="Abrir archivo…", command=self.open_file)
+        self.btn_open = ttk.Button(frame, text="Open File...", command=self.open_file)
         self.btn_open.pack(pady=5)
 
         self.status_label = ttk.Label(frame, text="")
@@ -83,7 +88,7 @@ class DecryptorApp:
         self.text_widget = None
 
     def insert_json(self, parent, key, value):
-        """Inserta recursivamente dict/list en el Treeview con tipo de dato y valor."""
+        """Recursively insert dict/list objects into the Treeview with their data type and value."""
         if isinstance(value, dict):
             node = self.tree.insert(parent, "end", text=key, values=("dict", ""))
             for k, v in value.items():
@@ -123,11 +128,11 @@ class DecryptorApp:
 
     def open_file(self):
         file = filedialog.askopenfilename(
-            title="Seleccionar archivo",
+            title="Select File",
             filetypes=[
-                ("Todos", "*.*"),
+                ("All Files", "*.*"),
                 ("MikuMikuDB Pack", "*.pdpack"),
-                ("PV Database (caché de pv_ids_manager)", "*.pvdb;*.frag;*.index;*.json"),
+                ("PV Database (pv_ids_manager cache)", "*.pvdb;*.frag;*.index;*.json"),
             ]
         )
         if not file:
@@ -138,14 +143,14 @@ class DecryptorApp:
                 blob = f.read()
         except Exception as e:
             self.clear_display()
-            messagebox.showerror("Error", f"No se pudo leer el archivo:\n{e}")
+            messagebox.showerror("Error", f"Failed to read the file:\n{e}")
             return
 
         version_label, handler = detect_encryptor(blob, filename=file)
 
         if not handler:
             self.clear_display()
-            messagebox.showerror("Error", "No se pudo detectar el sistema de encriptación/formato de este archivo.")
+            messagebox.showerror("Error", "Unable to detect the encryption system or file format.")
             self.status_label.configure(text="")
             return
 
@@ -153,18 +158,18 @@ class DecryptorApp:
             data = handler.decrypt_data(blob)
         except Exception as e:
             self.clear_display()
-            messagebox.showerror("Error", f"No se pudo decodificar el archivo ({version_label}):\n{e}")
+            messagebox.showerror("Error", f"Failed to decode the file ({version_label}):\n{e}")
             self.status_label.configure(text="")
             return
 
-        self.status_label.configure(text=f"Archivo: {os.path.basename(file)}  |  Formato detectado: {version_label}")
+        self.status_label.configure(text=f"File: {os.path.basename(file)}  |  Detected format: {version_label}")
 
         answer = messagebox.askyesnocancel(
-            "Elegir modo de vista",
-            "¿Cómo quieres mostrar el resultado?\n\n"
-            "Sí = Árbol (modo exploración)\n"
-            "No = Texto plano (JSON)\n"
-            "Cancelar = No mostrar",
+            "Choose Display Mode",
+            "How would you like to display the result?\n\n"
+            "Yes = Tree View (exploration mode)\n"
+            "No = Plain Text (JSON)\n"
+            "Cancel = Do not display",
         )
         if answer is None:
             return
