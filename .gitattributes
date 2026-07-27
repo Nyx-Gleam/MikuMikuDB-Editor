@@ -1,0 +1,33 @@
+# --- Line ending normalization ---
+# Normalize everything to LF in the repo; Git checks out using each OS's
+# native line ending. This fixes the CRLF-vs-LF diff noise mentioned
+# earlier (e.g. app_ja.py was saved with CRLF from Windows).
+* text=auto eol=lf
+
+# Windows-specific scripts should stay CRLF on checkout
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# --- Explicit binary types (never diff, never line-ending-convert) ---
+*.exe binary
+*.pdpack binary
+*.pyc binary
+*.ico binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.wav binary
+*.ogg binary
+*.mp3 binary
+*.pkl binary
+*.npz binary
+*.h5 binary
+*.npy binary
+
+# --- Vendored third-party code: exclude from GitHub's language stats
+#     and diffs, so PRs/insights reflect your own code, not madmom's ---
+madmom/** linguist-vendored
+madmom.dist/** linguist-vendored
+
+# --- Docs folder shouldn't count toward "code" stats either ---
+docs/** linguist-documentation
