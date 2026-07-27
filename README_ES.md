@@ -2,6 +2,11 @@
 
 🌐 **Idioma:** [English](./README.md) | Español | [日本語](./README_JA.md)
 
+[![Latest Release](https://img.shields.io/github/v/release/Nyx-Gleam/MikuMikuDB-Editor?include_prereleases)](https://github.com/Nyx-Gleam/MikuMikuDB-Editor/releases)
+[![License: MIT](https://img.shields.io/github/license/Nyx-Gleam/MikuMikuDB-Editor)](./LICENSE)
+[![Downloads](https://img.shields.io/github/downloads/Nyx-Gleam/MikuMikuDB-Editor/total)](https://github.com/Nyx-Gleam/MikuMikuDB-Editor/releases)
+[![Issues](https://img.shields.io/github/issues/Nyx-Gleam/MikuMikuDB-Editor)](https://github.com/Nyx-Gleam/MikuMikuDB-Editor/issues)
+
 > Aplicación GUI para generar archivos `mod_pv_db.txt` para packs de canciones personalizados de Project Diva.
 >
 > **Versión 2.0 BETA** — reconstruida desde cero sobre PySide6 (Qt), con un código modular, un único build trilingüe (inglés/español/japonés) y un gran número de herramientas nuevas y correcciones respecto a la versión original en Tkinter.
