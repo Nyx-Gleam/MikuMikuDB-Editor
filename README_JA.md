@@ -2,6 +2,11 @@
 
 🌐 **言語:** [English](./README.md) | [Español](./README_ES.md) | 日本語
 
+[![Latest Release](https://img.shields.io/github/v/release/Nyx-Gleam/MikuMikuDB-Editor?include_prereleases)](https://github.com/Nyx-Gleam/MikuMikuDB-Editor/releases)
+[![License: MIT](https://img.shields.io/github/license/Nyx-Gleam/MikuMikuDB-Editor)](./LICENSE)
+[![Downloads](https://img.shields.io/github/downloads/Nyx-Gleam/MikuMikuDB-Editor/total)](https://github.com/Nyx-Gleam/MikuMikuDB-Editor/releases)
+[![Issues](https://img.shields.io/github/issues/Nyx-Gleam/MikuMikuDB-Editor)](https://github.com/Nyx-Gleam/MikuMikuDB-Editor/issues)
+
 > Project Diva カスタム楽曲パック用の `mod_pv_db.txt` ファイルを生成する GUI アプリケーション。
 >
 > **バージョン 2.0 BETA** — PySide6（Qt）で一から作り直し、モジュール構成のコードベースと英語・スペイン語・日本語の単一トライリンガルビルドを採用。旧 Tkinter 版から数多くの新機能とバグ修正が加わっています。
