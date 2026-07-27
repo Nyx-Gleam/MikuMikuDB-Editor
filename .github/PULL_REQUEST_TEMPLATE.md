@@ -4,6 +4,8 @@
 
 ## Target branch check
 
+<!-- To mark with a check fill the space in between "[ ]" with and "x"-->
+
 - [ ] I'm targeting **`V2.0-dev`** (ongoing 2.0 work) — do NOT target `main` directly, it's the latest stable release only.
 - [ ] If this is a hotfix for the stable release instead, I've mentioned that explicitly above.
 
