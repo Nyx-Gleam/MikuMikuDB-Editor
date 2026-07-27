@@ -177,6 +177,6 @@ This project is released under the **MIT License**. See [LICENSE](./LICENSE) for
 
 * Inspired by the vibrant Project Diva modding community.
 * Developed and maintained by **NyxC**.
-* Special thanks to all beta testers and contributors, especially for their patience through the 2.0 rewrite.
+<!--* Special thanks to all beta testers and contributors, especially for their patience through the 2.0 rewrite.-->
 
 ![Rin Fuwapuchi](images/rin_fuwapuchi.png)
