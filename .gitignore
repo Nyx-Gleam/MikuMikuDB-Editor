@@ -1,0 +1,37 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+
+# --- Virtual environments ---
+venv/
+.venv/
+env/
+ENV/
+
+# --- Build / packaging (cx_Freeze, PyInstaller, etc.) ---
+build/
+dist/
+*.spec
+
+# --- User-specific runtime data (should not be shared between contributors) ---
+config.toml
+Autosaves/
+*.pdpack
+editor_crash.log
+*.log
+
+# --- Redundant raw clone of the madmom repo (the actual vendored package lives in /madmom, keep that one) ---
+madmom.dist/
+
+# --- Editor / IDE ---
+.idea/
+.vscode/
+*.swp
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
