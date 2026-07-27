@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 General question / tester sign-up
+    url: https://github.com/Nyx-Gleam/MikuMikuDB-Editor/discussions
+    about: For general questions, feedback, or letting us know you'd like to help test the 2.0 BETA, please use Discussions instead of an issue.
