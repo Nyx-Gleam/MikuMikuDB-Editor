@@ -5,11 +5,11 @@
 > Aplicación GUI para generar archivos `mod_pv_db.txt` para packs de canciones personalizados de Project Diva.
 >
 > **Versión 2.0 BETA** — reconstruida desde cero sobre PySide6 (Qt), con un código modular, un único build trilingüe (inglés/español/japonés) y un gran número de herramientas nuevas y correcciones respecto a la versión original en Tkinter.
-
+ 
 ---
-
+ 
 ## Índice
-
+ 
 1. [Descripción general](#descripción-general)
 2. [Novedades de la 2.0](#novedades-de-la-20)
 3. [Funciones principales](#funciones-principales)
@@ -21,23 +21,21 @@
 9. [Estructura del proyecto](#estructura-del-proyecto)
 10. [Licencia](#licencia)
 11. [Agradecimientos](#agradecimientos)
-
 ---
-
+ 
 ## Descripción general
-
+ 
 MikuMikuDB Editor simplifica la creación de `mod_pv_db.txt`, el archivo de configuración que impulsa los packs de canciones personalizados en Project Diva. Con una interfaz intuitiva, permite definir metadatos del pack, datos de cada canción, niveles de dificultad, créditos, letras, efectos de sonido, intérpretes y varias variantes de audio por tema, todo sin escribir código.
-
+ 
 * **Interfaz:** inglés, español y japonés, intercambiables en cualquier momento desde Ajustes (ya no hay builds separados por idioma).
 * **Distribución:** un único ejecutable para Windows 10/11, sin necesidad de Python ni dependencias.
 * **Salida:** guardados de proyecto `.pdpack` cifrados, más un `mod_pv_db.txt` final en UTF-8.
-
 ---
-
+ 
 ## Novedades de la 2.0
-
+ 
 Esta versión es una reescritura completa de la aplicación, no solo una actualización de funciones:
-
+ 
 * **Nuevo framework de interfaz:** migración de Tkinter a **PySide6 (Qt)** — tema oscuro nativo, arrastrar y soltar nativo, y escalado HiDPI que ya no necesita un sistema de escalado manual.
 * **Vista previa de audio instantánea:** el motor anterior exportaba cada vista previa a un WAV temporal y lo reproducía mediante un subproceso; el nuevo usa `QMediaPlayer` directamente, así que la reproducción y el avance son instantáneos y sin archivos temporales.
 * **Interfaz realmente trilingüe:** inglés, español y japonés conviven ahora en un solo build y se pueden cambiar desde Ajustes en cualquier momento.
@@ -53,11 +51,10 @@ Esta versión es una reescritura completa de la aplicación, no solo una actuali
 * **Validación de PV ID en línea** — verifica si un PV ID ya está usado o reservado antes de que lo confirmes.
 * Se incluye ahora, por separado, una herramienta independiente de diagnóstico: el **Decryptor Tool de `.pdpack`**.
 * La reescritura sacó a la luz una larga lista de correcciones, entre ellas: un formato de cifrado que nunca podía volver a abrirse, colisiones de nombre de archivo en los autoguardados, un cuelgue grave al iniciar, una ruta de carpeta de mods escrita a mano, y rangos de nivel de dificultad incorrectos.
-
 ---
-
+ 
 ## Funciones principales
-
+ 
 1. **Metadatos del pack**
    * Ingresa el **Pack Name** (en caracteres romanos) y, opcionalmente, el **nombre en japonés**.
 2. **Biblioteca de canciones**
@@ -80,36 +77,60 @@ Esta versión es una reescritura completa de la aplicación, no solo una actuali
 6. **Exportación final**
    * Haz clic en **Generate File** para crear un `mod_pv_db.txt` en UTF-8 listo para un pack de Project Diva.
    * Vuelve a importar ese mismo archivo cuando quieras con **Import mod_pv_db.txt** para seguir editándolo.
-
 ---
-
+ 
 ## Requisitos técnicos
-
+ 
 * **Windows 10 u 11** (se recomienda 64-bit).
 * **Build independiente:** no requiere instalar Python ni librerías; solo ejecutar el `.exe`.
 * **Ejecutando desde el código fuente:** Python 3.12+, además de `PySide6`, `cryptography` y `requests`. Opcionales: `pykakasi` (generación automática de hiragana), `toml` (lectura de `config.toml`) y `numpy` + `madmom` (detección automática de BPM).
-
 ---
-
+ 
 ## Instalación
-
+ 
 ### Instalación rápida (GitHub)
-
+ 
 1. Visita la página de [GitHub Releases](https://github.com/Nyx-Gleam/MikuMikuDB-Editor/releases).
 2. Descarga la última versión de `MikuMikuDB Editor.exe`.
 3. Haz doble clic para ejecutarlo; si Windows advierte sobre un editor desconocido, clic derecho → **Propiedades** → marca **Desbloquear** → **Aplicar**, y vuelve a ejecutarlo.
-
 ### Instalación alternativa (GameBanana)
-
+ 
 1. Ve a la [página de GameBanana](https://gamebanana.com/tools/19907) de esta herramienta.
 2. Descarga la última versión del editor.
 3. Haz doble clic en `Editor.exe` para iniciarlo — no requiere instalación.
    * Si Windows muestra una advertencia de seguridad: clic derecho en el archivo → **Propiedades** → marca **Desbloquear** al final → **Aplicar** → **Aceptar**.
-
+### Ejecutar desde el código fuente
+ 
+1. Clona el repositorio:
+```bash
+   git clone https://github.com/Nyx-Gleam/MikuMikuDB-Editor.git
+   cd MikuMikuDB-Editor
+```
+2. Crea un entorno virtual (usa el comando que funcione en tu sistema — `py` o `python`):
+```bash
+   py -m venv venv
+   # o
+   python -m venv venv
+```
+3. Actívalo:
+```bash
+   .\venv\Scripts\activate
+```
+4. Instala las dependencias:
+```bash
+   pip install -r requirements.txt
+```
+5. Ejecuta la aplicación:
+```bash
+   py main.py
+```
+ 
+> **Nota:** `pykakasi`, `toml` y `numpy`+`madmom` son opcionales (ver [requirements.txt](./requirements.txt)) — la app funciona sin ellos, solo que sin generación automática de hiragana ni auto-detección de BPM.
+ 
 ---
-
+ 
 ## Uso paso a paso
-
+ 
 1. **Inicia** la aplicación y elige el idioma de la interfaz en **Ajustes** si lo necesitas.
 2. Ingresa el **Pack Name** y, opcionalmente, el **nombre en japonés**.
 3. **Agrega canciones:**
@@ -125,29 +146,26 @@ Esta versión es una reescritura completa de la aplicación, no solo una actuali
 6. Ejecuta **Validate Media Files** para confirmar que no falte nada, y **Create Missing Folders** para armar la estructura de carpetas de tu mod.
 7. Guarda tu proyecto cuando quieras con **Save Configuration** (`.pdpack`).
 8. Cuando esté listo, haz clic en **Generate File** para exportar `mod_pv_db.txt`.
-
 ---
-
+ 
 ## Configuración y autoguardado
-
+ 
 * **Autoguardado:** cada 5 minutos se guarda un `.pdpack` cifrado en la carpeta `Autosaves/` (máximo 60 archivos).
 * **Guardar/cargar manual:** usa **Save Configuration** / **Load Configuration** para archivos de proyecto cifrados; los formatos `.pdpack` antiguos se migran automáticamente.
 * **Load Autosave:** restaura rápidamente desde una copia reciente.
-
 ---
-
+ 
 ## Exportar `mod_pv_db.txt`
-
+ 
 1. Verifica que el **Pack Name** esté definido y que exista al menos una canción.
 2. Haz clic en **Generate File**.
 3. Elige un nombre de archivo (por defecto `mod_pv_db.txt`) y el destino.
 4. Se genera un `mod_pv_db.txt` en UTF-8 con la definición completa del pack.
 5. Puedes volver a importar ese mismo archivo más adelante con **Import mod_pv_db.txt** para seguir editándolo.
-
 ---
-
+ 
 ## Estructura del proyecto
-
+ 
 ```text
 MikuMikuDB-Editor/
 ├── main.py                  # Punto de entrada
@@ -164,19 +182,20 @@ MikuMikuDB-Editor/
 ├── tests/                     # Suite de pruebas de regresión
 └── Autosaves/                 # Archivos .pdpack autoguardados
 ```
-
+ 
 ---
-
+ 
 ## Licencia
-
+ 
 Este proyecto se publica bajo la **Licencia MIT**. Consulta [LICENSE](./LICENSE) para más detalles.
-
+ 
+Este proyecto incluye componentes de terceros bajo sus propias licencias (incluyendo una dependencia LGPLv3 y otra GPLv3). Consulta [THIRD_PARTY_LICENSES.md](./THIRD_PARTY_LICENSES.md) para la lista completa.
+ 
 ---
-
+ 
 ## Agradecimientos
-
+ 
 * Inspirado en la vibrante comunidad de modding de Project Diva.
 * Desarrollado y mantenido por **NyxC**.
-<!--* Gracias especiales a todos los beta testers y colaboradores, en especial por su paciencia durante la reescritura de la 2.0.-->
-
+* Gracias especiales a todos los beta testers y colaboradores, en especial por su paciencia durante la reescritura de la 2.0.
 ![Rin Fuwapuchi](images/rin_fuwapuchi.png)
