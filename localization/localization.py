@@ -1,20 +1,23 @@
 """
 localization.localization
-==========================
-Gestor global de localización (mismo API público que el original:
+=========================
+Global localization manager (same public API as the original:
 LocalizationManager, get_localized_text, set_current_language,
 get_current_language, _call_txt).
 
-Cambio respecto al original: la ubicación de data/lang.json ya no depende
-únicamente del directorio de trabajo actual (cwd). El original hacía
-`os.path.join("data", "lang.json")`, lo que significa que si la app frozen
-(.exe) se lanza con un cwd distinto a su propia carpeta (por ejemplo, un
-acceso directo mal configurado, o al abrir un .pdpack con "abrir con..."),
-`data/lang.json` deja de encontrarse y todo el texto de la UI cae a
-"TEXT_NOT_FOUND (404)". Ahora se prueban, en orden: cwd (comportamiento
-original, por compatibilidad), la carpeta del ejecutable/script, y la
-carpeta raíz del proyecto (padre de este paquete).
+Difference from the original: the location of data/lang.json no longer
+depends solely on the current working directory (cwd). The original used
+`os.path.join("data", "lang.json")`, which meant that if the frozen
+application (.exe) was launched with a different working directory
+(for example, from a misconfigured shortcut or by opening a .pdpack file
+using "Open with..."), `data/lang.json` could not be found and the entire
+UI would fall back to "TEXT_NOT_FOUND (404)".
+
+This implementation searches for the localization file in the following
+order: the current working directory (for backward compatibility), then
+the application/executable directory.
 """
+
 import json
 import os
 
@@ -22,21 +25,23 @@ from core.paths import get_application_path
 
 
 def _find_lang_json() -> str:
-    """Busca data/lang.json en varias ubicaciones candidatas, en orden de prioridad."""
+    """Search for data/lang.json in several candidate locations, in priority order."""
     candidates = [
-        os.path.join(os.getcwd(), "data", "lang.json"),          # comportamiento original
-        os.path.join(get_application_path(), "data", "lang.json"),  # carpeta de la app/exe
+        os.path.join(os.getcwd(), "data", "lang.json"),             # Original behavior
+        os.path.join(get_application_path(), "data", "lang.json"),  # Application/executable directory
     ]
+
     for path in candidates:
         if os.path.exists(path):
             return path
-    # Ninguna existe todavía: devolvemos la más razonable (junto al ejecutable)
-    # para que el mensaje de advertencia apunte a un lugar útil.
+
+    # None of the candidate paths exist yet. Return the most reasonable
+    # location (next to the executable) so the warning points to a useful path.
     return candidates[1]
 
 
 class LocalizationManager:
-    """Gestor global de localización para manejar múltiples idiomas."""
+    """Global localization manager for handling multiple languages."""
 
     _instance = None
     _localization_data = None
@@ -49,7 +54,7 @@ class LocalizationManager:
         return cls._instance
 
     def _load_localization_data(self):
-        """Carga los datos de localización desde el archivo JSON."""
+        """Load localization data from the JSON file."""
         try:
             json_path = _find_lang_json()
             if os.path.exists(json_path):
@@ -63,30 +68,35 @@ class LocalizationManager:
             self._localization_data = {}
 
     def set_language(self, language_code):
-        """Establece el idioma actual."""
+        """Set the current application language."""
         self._current_language = language_code
 
     def get_language(self):
-        """Obtiene el idioma actual."""
+        """Return the current application language."""
         return self._current_language
 
     def get_text(self, text_id, language_code=None):
         """
-        Obtiene el texto localizado por text_id y language_code.
+        Retrieve a localized string using its text identifier.
 
         Args:
-            text_id (str): Identificador del texto
-            language_code (str): Código de idioma (en, es, ja). Si es None, usa el idioma actual
+            text_id (str):
+                Localization key.
+            language_code (str, optional):
+                Language code (e.g. "en", "es", "ja").
+                If None, the current language is used.
 
         Returns:
-            str: El texto localizado o "TEXT_NOT_FOUND (404)" si no se encuentra
+            str:
+                The localized string, or "TEXT_NOT_FOUND (404)"
+                if the key does not exist.
         """
         if language_code is None:
             language_code = self._current_language
 
         if self._localization_data is None:
             print(f"[Localization] Missing data: attempted to get '{text_id}' for '{language_code}' but localization data is not loaded.")
-            print("[Localization] Please check data/lang.json and ensure it exists and is valid JSON.")
+            print("[Localization] Please check data/lang.json and ensure it exists and contains valid JSON.")
             return "TEXT_NOT_FOUND (404)"
 
         full_key = f"{text_id}_{language_code}"
@@ -99,32 +109,35 @@ class LocalizationManager:
             if fallback_key in self._localization_data:
                 return self._localization_data[fallback_key]
 
-        print(f"[Localization] TEXT NOT FOUND -> id: '{text_id}' (lang requested: '{language_code}').")
-        print(f"[Localization] Add keys '{text_id}_{language_code}' or '{text_id}_en' to data/lang.json to fix this.")
+        print(f"[Localization] TEXT NOT FOUND -> id: '{text_id}' (requested language: '{language_code}').")
+        print(f"[Localization] Add the keys '{text_id}_{language_code}' or '{text_id}_en' to data/lang.json to resolve this.")
         return "TEXT_NOT_FOUND (404)"
 
 
 def get_localized_text(text_id, language_code=None):
-    """Función global para obtener texto localizado."""
+    """Retrieve a localized string."""
     manager = LocalizationManager()
     return manager.get_text(text_id, language_code)
 
 
 def set_current_language(language_code):
-    """Establece el idioma globalmente."""
+    """Set the global application language."""
     manager = LocalizationManager()
     manager.set_language(language_code)
 
 
 def get_current_language():
-    """Obtiene el idioma actual."""
+    """Return the currently selected application language."""
     manager = LocalizationManager()
     return manager.get_language()
 
 
 def _call_txt(text_id, language_code=None):
     """
-    Alias corto para get_localized_text()
-    Uso: _("button_accept") o _("button_accept", "es")
+    Short alias for get_localized_text().
+
+    Example:
+        _("button_accept")
+        _("button_accept", "es")
     """
     return get_localized_text(text_id, language_code)
