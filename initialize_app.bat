@@ -2,8 +2,8 @@
 cd /d "%~dp0"
 
 call .\venv\Scripts\activate.bat
-py main.py
+python main.py
 
 echo.
-echo La aplicacion ha finalizado.
+echo The application has exited.
 pause
