@@ -1,0 +1,56 @@
+name: 🌐 Translation / Localization Issue
+description: Report incorrect, missing, or awkward text in English, Spanish, or Japanese.
+title: "[Translation]: "
+labels: ["translation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        You can write this issue in **English, Spanish, or Japanese** — whichever is easiest for you.
+        コメントは英語・スペイン語・日本語のどれでも構いません。
+        Puedes escribir este issue en inglés, español o japonés — el que te resulte más cómodo.
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: Which language is affected?
+      options:
+        - English
+        - Español
+        - 日本語
+        - More than one / not sure
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Where is this text?
+      description: Which screen, tab, dialog, button, or message. Be as specific as you can.
+      placeholder: "e.g. Song Editor → Lyrics tab → import button tooltip"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-text
+    attributes:
+      label: Current text
+      description: Copy the exact text as it currently appears (or attach a screenshot).
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong with it?
+      description: Incorrect translation, doesn't fit in the UI (gets cut off), inconsistent terminology, typo, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested text (optional)
+      description: If you have a proposed fix, share it here. Not required — reporting the problem alone is still useful.
+    validations:
+      required: false
