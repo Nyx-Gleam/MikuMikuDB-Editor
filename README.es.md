@@ -71,7 +71,7 @@ Esta versión es una reescritura completa de la aplicación, no solo una actuali
    * **Intérpretes:** elige hasta seis vocaloids entre Hatsune Miku, Kagamine Rin/Len, Megurine Luka, KAITO, MEIKO, Yowane Haku, Akita Neru, Sakine Meiko y Kasane Teto.
    * **Song Info:** campos opcionales para arreglista, letrista, compositor/artista, manipulador, guitarrista, ilustrador y editor de PV — cada uno en original e inglés.
    * **Letras:** escribe o importa letras en japonés/inglés, con importación desde formatos de subtítulos y sincronización de líneas.
-   * **Variantes de audio:** define mezclas alternativas o dúos con su propio nombre, artista, sufijo y lista de intérpretes; se exige lectura en hiragana donde corresponde.
+   * **Variantes de audio:** define mezclas alternativas o dúos con su propio nombre, artista, sufijo y un único intérprete; se exige lectura en hiragana donde corresponde.
    * **SFX:** configura los efectos de sonido Button, Slide, Chain Slide, Slider Touch y Chance.
 4. **Autoguardado y guardado manual**
    * Copias de seguridad automáticas en `.pdpack` cada 5 minutos (hasta 60 archivos).
