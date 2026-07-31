@@ -1,12 +1,12 @@
 # MikuMikuDB Editor
-
-🌐 **Idioma:** [English](./README.md) | Español | [日本語](./README_JA.md)
-
+ 
+🌐 **Idioma:** [English](./README.md) | Español | [日本語](./README.ja.md)
+ 
 [![Latest Release](https://img.shields.io/github/v/release/Nyx-Gleam/MikuMikuDB-Editor?include_prereleases)](https://github.com/Nyx-Gleam/MikuMikuDB-Editor/releases)
-[![License: MIT](https://img.shields.io/github/license/Nyx-Gleam/MikuMikuDB-Editor)](./LICENSE)
+[![License](https://img.shields.io/github/license/Nyx-Gleam/MikuMikuDB-Editor)](./LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/Nyx-Gleam/MikuMikuDB-Editor/total)](https://github.com/Nyx-Gleam/MikuMikuDB-Editor/releases)
 [![Issues](https://img.shields.io/github/issues/Nyx-Gleam/MikuMikuDB-Editor)](https://github.com/Nyx-Gleam/MikuMikuDB-Editor/issues)
-
+ 
 > Aplicación GUI para generar archivos `mod_pv_db.txt` para packs de canciones personalizados de Project Diva.
 >
 > **Versión 2.0 BETA** — reconstruida desde cero sobre PySide6 (Qt), con un código modular, un único build trilingüe (inglés/español/japonés) y un gran número de herramientas nuevas y correcciones respecto a la versión original en Tkinter.
@@ -192,9 +192,11 @@ MikuMikuDB-Editor/
  
 ## Licencia
  
-Este proyecto se publica bajo la **Licencia MIT**. Consulta [LICENSE](./LICENSE) para más detalles.
+A partir de la versión 2.0, este proyecto se publica bajo la **GNU General Public License v3.0 (GPL-3.0)**. Consulta [LICENSE](./LICENSE) para el texto completo.
  
-Este proyecto incluye componentes de terceros bajo sus propias licencias (incluyendo una dependencia LGPLv3 y otra GPLv3). Consulta [THIRD_PARTY_LICENSES.md](./THIRD_PARTY_LICENSES.md) para la lista completa.
+Las versiones 1.0 y 1.1 se mantienen bajo la Licencia MIT, tal como se publicaron originalmente — este cambio aplica hacia adelante desde la 2.0, no de forma retroactiva.
+ 
+Este proyecto incluye componentes de terceros bajo sus propias licencias. Consulta [THIRD_PARTY_LICENSES.md](./THIRD_PARTY_LICENSES.md) para la lista completa.
  
 ---
  
