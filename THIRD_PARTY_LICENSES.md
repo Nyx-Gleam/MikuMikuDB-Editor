@@ -1,6 +1,6 @@
 # Third-Party Licenses / Avisos de terceros
 
-MikuMikuDB Editor is distributed under the MIT License (see [LICENSE](./LICENSE)).
+MikuMikuDB Editor versions 1.0 and 1.1 were distributed under the MIT License. Starting with version 2.0, the project is distributed under the GNU General Public License v3.0 (GPL-3.0) — see [LICENSE](./LICENSE) for the version currently in effect.
 It uses the following third-party components, each under its own license.
 
 ---
@@ -32,7 +32,10 @@ License: **GPL-3.0-only**. Bundles a relicensed portion of the UniDic
 dictionary under GPL-3.0+.
 https://github.com/miurahr/pykakasi
 This dependency is optional; the application functions without it
-(automatic Hiragana generation is simply unavailable).
+(automatic Hiragana generation is simply unavailable). As of version 2.0,
+this project's own license (GPL-3.0) is compatible with pykakasi's license,
+so bundling it introduces no additional licensing constraint beyond what
+GPL-3.0 already requires project-wide.
 
 **toml**
 License: MIT
