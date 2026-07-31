@@ -52,4 +52,4 @@ For general questions, ideas you haven't fully fleshed out, or wanting to help t
 
 ## Licensing
 
-By contributing, you agree your contribution is licensed under the project's [MIT License](./LICENSE). Please don't submit code you don't have the rights to license this way (e.g. copied from a differently-licensed project).
+By contributing to `V2.0-dev` (or any branch descending from it), you agree your contribution is licensed under the project's [GPL-3.0 License](./LICENSE). If you're submitting a hotfix against `main` while it still reflects a pre-2.0 release, that contribution falls under whatever license that release was published under (MIT, for 1.0/1.1) instead. Please don't submit code you don't have the rights to license this way (e.g. copied from a differently-licensed project).
