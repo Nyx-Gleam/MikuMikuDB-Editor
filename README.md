@@ -71,7 +71,7 @@ This version is a full rewrite of the application, not just a feature update:
    * **Performers:** Choose up to six vocalists from Hatsune Miku, Kagamine Rin/Len, Megurine Luka, KAITO, MEIKO, Yowane Haku, Akita Neru, Sakine Meiko, and Kasane Teto.
    * **Song Info:** Optional fields for arranger, lyricist, composer/artist, manipulator, guitar player, illustrator, and PV editor — each in original and English.
    * **Lyrics:** Type or import Japanese/English lyrics, with subtitle-format import and line syncing.
-   * **Audio Variants:** Define alternate mixes or duets with their own name, artist, suffix, and performer list; Hiragana-only readings are enforced where required.
+   * **Audio Variants:** Define alternate mixes or duets with their own name, artist, suffix, and a single performer; Hiragana-only readings are enforced where required.
    * **SFX:** Configure Button, Slide, Chain Slide, Slider Touch, and Chance sound effects.
 4. **Auto-Save & Manual Save**
    * Automatic `.pdpack` backups every 5 minutes (up to 60 files).
