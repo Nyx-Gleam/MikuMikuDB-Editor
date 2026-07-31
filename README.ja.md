@@ -1,12 +1,12 @@
 # MikuMikuDB エディター
-
-🌐 **言語:** [English](./README.md) | [Español](./README_ES.md) | 日本語
-
+ 
+🌐 **言語:** [English](./README.md) | [Español](./README.es.md) | 日本語
+ 
 [![Latest Release](https://img.shields.io/github/v/release/Nyx-Gleam/MikuMikuDB-Editor?include_prereleases)](https://github.com/Nyx-Gleam/MikuMikuDB-Editor/releases)
-[![License: MIT](https://img.shields.io/github/license/Nyx-Gleam/MikuMikuDB-Editor)](./LICENSE)
+[![License](https://img.shields.io/github/license/Nyx-Gleam/MikuMikuDB-Editor)](./LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/Nyx-Gleam/MikuMikuDB-Editor/total)](https://github.com/Nyx-Gleam/MikuMikuDB-Editor/releases)
 [![Issues](https://img.shields.io/github/issues/Nyx-Gleam/MikuMikuDB-Editor)](https://github.com/Nyx-Gleam/MikuMikuDB-Editor/issues)
-
+ 
 > Project Diva カスタム楽曲パック用の `mod_pv_db.txt` ファイルを生成する GUI アプリケーション。
 >
 > **バージョン 2.0 BETA** — PySide6（Qt）で一から作り直し、モジュール構成のコードベースと英語・スペイン語・日本語の単一トライリンガルビルドを採用。旧 Tkinter 版から数多くの新機能とバグ修正が加わっています。
@@ -193,7 +193,11 @@ MikuMikuDB-Editor/
  
 ## ライセンス
  
-本プロジェクトは **MIT ライセンス** の下で公開されています。詳細は [LICENSE](./LICENSE) を参照してください。
+バージョン 2.0 以降、本プロジェクトは **GNU General Public License v3.0（GPL-3.0）** のもとで公開されています。全文は [LICENSE](./LICENSE) を参照してください。
+ 
+バージョン 1.0 および 1.1 は、当初リリースされた通り引き続き MIT ライセンスのままです — この変更は 2.0 以降にのみ適用され、過去のバージョンに遡って適用されるものではありません。
+ 
+本プロジェクトはサードパーティ製コンポーネントをそれぞれのライセンスのもとで同梱しています。詳細は [THIRD_PARTY_LICENSES.md](./THIRD_PARTY_LICENSES.md) を参照してください。
  
 ---
  
