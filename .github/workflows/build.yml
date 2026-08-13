@@ -1,0 +1,89 @@
+name: Build Editor (Windows, Linux, macOS)
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: windows-latest
+            mode: onefile
+          - os: ubuntu-latest
+            mode: onefile
+          - os: macos-latest
+            mode: app
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build with Nuitka
+        uses: Nuitka/Nuitka-Action@main
+        with:
+          nuitka-version: main
+          script-name: main.py
+          mode: ${{ matrix.mode }}
+          enable-plugins: pyside6
+          follow-imports: true
+          lto: true
+          deployment: true
+          python-flag: no_docstrings
+          include-package: |
+            madmom
+            numpy
+          include-package-data: madmom
+          include-data-dir: |
+            docs=docs
+            data/dev_rom=data/dev_rom
+          include-data-files: |
+            data/lang.json=data/lang.json
+            data/vanilla_songs.json=data/vanilla_songs.json
+          company-name: "NyxC"
+          copyright: "© 2026 NyxC. All rights reserved."
+          product-name: "Editor"
+          product-version: ${{ matrix.os != 'ubuntu-latest' && '2.0.0.0' || '' }}
+          windows-console-mode: ${{ matrix.os == 'windows-latest' && 'disable' || '' }}
+          windows-icon-from-ico: ${{ matrix.os == 'windows-latest' && 'icon.ico' || '' }}
+          linux-icon: ${{ matrix.os == 'ubuntu-latest' && 'icon.png' || '' }}
+          macos-app-name: ${{ matrix.os == 'macos-latest' && 'Editor' || '' }}
+          macos-app-version: ${{ matrix.os == 'macos-latest' && '2.0' || '' }}
+          macos-signed-app-name: ${{ matrix.os == 'macos-latest' && 'com.nyxc.mikumikudb-editor' || '' }}
+          macos-app-icon: ${{ matrix.os == 'macos-latest' && 'icon.icns' || '' }}
+          output-dir: build
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Editor-${{ runner.os }}
+          path: |
+            build/*.exe
+            build/*.bin
+            build/*.app/**/*
+          include-hidden-files: true
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/')
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+
+      - name: Publish Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/Editor-Windows/*
+            dist/Editor-Linux/*
+            dist/Editor-macOS/**/*
